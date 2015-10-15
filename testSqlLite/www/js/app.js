@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
 .controller ("AppExit", function ($scope) {
  $scope.exit = function(){
-   var r=window.confirm("¿Esta seguro que desea salir?");
+   var r=window.confirm("ARE YOU SURE YOU WANT TO QUIT?");
     if (r==true){
       if(window.navigator.app){
         navigator.app.exitApp();

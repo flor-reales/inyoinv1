@@ -87,7 +87,7 @@ angular.module("starter.services", [])
           $scope.datos = users;
           contadorNivelCero++;
 
-          document.getElementById('b01').textContent= $scope.datos[0].categ;
+        //  document.getElementById('b01').textContent= $scope.datos[0].categ;
    })
 
 	};

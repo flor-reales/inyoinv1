@@ -369,7 +369,7 @@
               <img  src="img\hora.png" width="35px" height="35px"></button>
 
 				<button class="button button-full button-stable" onclick="mostrar('nivel4','categoria4')" > PHRASES
-              <img  src="img\frases.png" width="35px" height="35px"></button>
+              <img  src="img\frases.png" width="65px" height="35px"></button>
 	    </div>
 
       <div id="bizq">
@@ -416,6 +416,10 @@
           <img src="img\play.png" width="50px" height="50px"> </button>
 		  </div>
 
+      <div id="bsgte" onclick="siguienteitemN0()">
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+			</div>
+
       <div id="bizq">
         <button  onclick="mostrarborrar('categoria0','nivel0')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
@@ -457,6 +461,10 @@
                       onclick="validacionNivelUno('img13');reproducirNivelUno('s14'); this.onclick = ''" alt="FISH">
       </div>
 
+      <div id="bsgte" onclick="siguienteItem()">
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+			</div>
+
       <div id="bizq">
         <button  onclick="mostrarborrar('categoria1','nivel1')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
@@ -488,6 +496,10 @@
 		  <div id="brta3">
 			<button id=b23 class="button  button-energized"onclick="validacionNivelDos('b23')" value="LEMON" >  LEMON  </button>
 		  </div>
+
+      <div id="bsgte" onclick="siguienteItem()">
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+			</div>
 
       <div id="bizq">
         <button  onclick="mostrarborrar('categoria2','nivel2')"style="border:transparent 1px solid;background:transparent; ">
@@ -546,6 +558,10 @@
       <button id=b33 class="button  button-energized" onclick="validacionNivelTres('b33')" value="CAT">  CAT   </button>
       </div>
 
+      <div id="bsgte" onclick="siguienteItem()">
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+			</div>
+
       <div id="bizq">
         <button  onclick="mostrarborrar('categoria3','nivel3')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
@@ -579,11 +595,14 @@
       <button id=b43 class="button button-energized"  onclick="validacionNivelCuatro('b43')" value="UNDER">  UNDER  </button>
       </div>
 
+      <div id="bsgte" onclick="siguienteItem()">
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+			</div>
+
       <div id="bizq">
         <button  onclick="mostrarborrar('categoria4','nivel4')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
-
 
       <div id="bderecha">
         <button  onclick="mostrarborrar('principal','nivel4')"style="border:transparent 1px solid;background:transparent; ">
@@ -621,7 +640,7 @@
 
 		<!-- pagina contactarnos IU-017 -->
 		<div id="contacto" style= "visibility:hidden">
-			<div id="cabecera2"><h2> Contáctanos </h2></div>
+			<div id="cabecera2"><h2> CONTACT US </h2></div>
 
       <div id="img" style="position: absolute; top:150px; left:45px"> <img src="img\email.png" width="40px"></div>
 			<h4 style="position: absolute; top:150px; left:95px"> inyoin@gametive.com.ar </h4>
@@ -646,9 +665,9 @@
 	  <!-- pagina acerca de IU-018 -->
 		<div id="acerca" style= "visibility:hidden">
 				<div id="cabecera2"><h1> INYOIN </h1></div>
-          <div id="ajustestext" style="position: absolute; top:180px"><h4> Version 1.0.0</h4></div>
-          <div id="ajustestext" style="position: absolute; top:240px"><h4> Obtenida el 25/11/15</h4></div>
-          <div id="ajustestext" style="position: absolute; top:300px"><h4> DESARROLLADO POR  </h4></div>
+          <div id="ajustestext" style="position: absolute; top:180px"><h4>VERSION 1.0.0</h4></div>
+          <div id="ajustestext" style="position: absolute; top:240px"><h4> DOWNLOADED 25/11/15</h4></div>
+          <div id="ajustestext" style="position: absolute; top:300px"><h4> DEVELOPED BY   </h4></div>
 
 			<div id="ajustestext" style="position: absolute; top:350px"> <img src="img\gametive.png" height="120px" width="90px">
 			</div>
@@ -930,7 +949,7 @@ function silenciar(){
       document.getElementById("soundincorrecto").src=" ";
       //Cambio imagen del boton silenciar
       document.getElementById("imgsilenciar").src="img/soundoff.png";
-      alert("La aplicación fue silenciada, no escuchará los sonidos");
+      alert("THE APP WAS SILENCED, NOT LISTENING THE SOUNDS");
       silencio = 1;
     }else{
       //Activo todos los botones play
@@ -944,7 +963,7 @@ function silenciar(){
       document.getElementById("soundincorrecto").src="sonidos/incorrecto.mp3";
       //Cambio imagen del boton silenciar
       document.getElementById("imgsilenciar").src="img/soundon.png";
-      alert("Ahora puede escuchar sonidos");
+      alert("NOW YOU CAN LISTEN THE SOUNDS");
       silencio = 0;
     }
   }
@@ -963,7 +982,7 @@ function siguienteitemN0(nivel,categ,item){
  //var resultado = {nivel, categ, item, descrip, pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta};
 
  var resultado;
-
+alert(45);
 
  /*
 	resultado = Users.select( nivel, categ, item);
