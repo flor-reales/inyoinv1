@@ -78,7 +78,7 @@ angular.module("starter.services", [])
    var contadorNivelCero = 0;
    var contadorNivelUno = 0;
 
-  alert(contadorNivelCero);
+//  alert(contadorNivelCero);
 
    $scope.cargarNivelCero = function(nivel, categ, item ) {
 
@@ -87,7 +87,6 @@ angular.module("starter.services", [])
           $scope.datos = users;
           contadorNivelCero++;
 
-          alert($scope.datos[0].categ);
           document.getElementById('b01').textContent= $scope.datos[0].categ;
    })
 
@@ -98,7 +97,7 @@ angular.module("starter.services", [])
   Users.select(nivel, categ, item).then(function(users)
   {
          $scope.datos = users;
-         alert($scope.datos[0].categ);
+//         alert($scope.datos[0].categ);
   })
 
  };
