@@ -617,7 +617,7 @@
 	    <div id="imgaprender"> <img id=imgap src="img\caballo.png" width="150px"></div>
 
 			<div id="baprender">
-				<button id=bapIngles class="button  button-energized" >   HORSE  </button>
+				<button id=bapIngles class="button  button-assertive" >   HORSE  </button>
 			</div>
 
 			<div id="bsgte" onclick="siguienteItem()">
@@ -748,13 +748,13 @@ function validacionNivelCero(button){
 
 		if( n!=0 ){
       musicplay("soundincorrecto");
-      document.getElementById("incorrecto").innerHTML='Intentalo de nuevo';
+      document.getElementById("incorrecto").innerHTML='Try again';
       document.getElementById("img01").style.border="outset red";
       document.getElementById(button).style.border="outset red";
       document.getElementById(button).disabled='disabled';
      }else{
       musicplay("soundcorrecto");
-      document.getElementById("correcto").innerHTML='¡Muy bien!';
+      document.getElementById("correcto").innerHTML='Very Good!';
       document.getElementById(button).style.border="outset green";
       document.getElementById("img01").style.border="outset green";
 
@@ -769,13 +769,13 @@ function validacionNivelUno(button){
 
   if( n != 0 ){
     musicplay("soundincorrecto");
-    document.getElementById("incorrecto").innerHTML='Intentalo de nuevo';
+    document.getElementById("incorrecto").innerHTML='Try again';
     document.getElementById("b11").style.border="outset red";
     document.getElementById(button).style.border="outset red";
     document.getElementById("img11").disabled=true;
   }else{
       musicplay("soundcorrecto");
-      document.getElementById("correcto").innerHTML='¡Muy bien!';
+      document.getElementById("correcto").innerHTML='Very Good!';
       document.getElementById("b11").style.border="outset green";
       document.getElementById(button).style.border="outset green";
   //    window.setTimeout("alert('Siguiente Item')",2000);
@@ -790,13 +790,13 @@ function validacionNivelDos(button){
 
   if( n == 0 ){
     musicplay("soundincorrecto");
-    document.getElementById("incorrecto").innerHTML='Intentalo de nuevo';
+    document.getElementById("incorrecto").innerHTML='Try again';
     document.getElementById("img21").style.border="outset red";
     document.getElementById(button).style.border="outset red";
     document.getElementById(button).disabled=true;
   }else{
     musicplay("soundcorrecto");
-    document.getElementById("correcto").innerHTML='¡Muy bien!';
+    document.getElementById("correcto").innerHTML='Very Good!';
     document.getElementById(button).style.border="outset green";
     document.getElementById("img21").style.border="outset green";
     //    flag2++;
@@ -879,7 +879,7 @@ function validacionNivelTres(button){
             //Todo salio correcto
                 document.getElementById("brtaelegida33").disabled='disabled';
                 musicplay("soundcorrecto");
-                document.getElementById("correcto").innerHTML='¡Muy bien!';
+                document.getElementById("correcto").innerHTML='Very Good!';
                 botonesVerdes();
     }
   }
@@ -898,14 +898,14 @@ function validacionNivelCuatro(button){
 
 		if( n!=0 ){
       musicplay("soundincorrecto");
-      document.getElementById("incorrecto").innerHTML='Intentalo de nuevo';
+      document.getElementById("incorrecto").innerHTML='Try again';
       document.getElementById("img41").style.border="outset red";
       document.getElementById(button).style.border="outset red";
       document.getElementById("frase").innerHTML=fraseIncompleta;
       document.getElementById(button).disabled='disabled';
      }else{
       musicplay("soundcorrecto");
-      document.getElementById("correcto").innerHTML='¡Muy bien!';
+      document.getElementById("correcto").innerHTML='Very Good!';
       document.getElementById(button).style.border="outset green";
       document.getElementById("img41").style.border="outset green";
       document.getElementById("frase").innerHTML=fraseCorrecta;
