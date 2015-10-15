@@ -391,7 +391,7 @@
         <button onclick="rehacerNivelCero()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
 
-		  <div id="imgcenterunique"><img id=img01 src="img\caballo.png" width="150px"></div>
+		  <div id="imgcenterunique"><img id="img01" src="img\caballo.png" width="150px" height="150 px"></div>
 
       <div id="brta1">
 			<button id=b01 class="button  button-energized" onclick="validacionNivelCero('b01')" value="DOG">   DOG  </button>
@@ -417,7 +417,7 @@
 		  </div>
 
       <div id="bsgte" onclick="siguienteitemN0()">
-				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+				<button id="bsgte0" style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
       <div id="bizq">
@@ -461,7 +461,7 @@
                       onclick="validacionNivelUno('img13');reproducirNivelUno('s14'); this.onclick = ''" alt="FISH">
       </div>
 
-      <div id="bsgte" onclick="siguienteItem()">
+      <div id="bsgte">
 				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -497,7 +497,7 @@
 			<button id=b23 class="button  button-energized"onclick="validacionNivelDos('b23')" value="LEMON" >  LEMON  </button>
 		  </div>
 
-      <div id="bsgte" onclick="siguienteItem()">
+      <div id="bsgte">
 				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -558,7 +558,7 @@
       <button id=b33 class="button  button-energized" onclick="validacionNivelTres('b33')" value="CAT">  CAT   </button>
       </div>
 
-      <div id="bsgte" onclick="siguienteItem()">
+      <div id="bsgte">
 				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -595,7 +595,7 @@
       <button id=b43 class="button button-energized"  onclick="validacionNivelCuatro('b43')" value="UNDER">  UNDER  </button>
       </div>
 
-      <div id="bsgte" onclick="siguienteItem()">
+      <div id="bsgte">
 				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -724,6 +724,8 @@
     var silencio = 0;
     rtaCorrecta = new Array(3);
     var rta = new String;
+        rta='HORSE';
+        var resultado=0;
     var rtaIncorrecta = new String;
     var flag2 = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 2
     var flag4 = 0;  //Se inicializara en cero cada vez que se cargue un item del nivel 4
@@ -740,7 +742,7 @@ function reproducirNivelUno(sound){
 
 function validacionNivelCero(button){
     borrar();
-    rta='HORSE'; //Cuando se carga el ejercicio se cargara esta rta, asi que esta  linea se debe borrar
+    //rta='HORSE'; //Cuando se carga el ejercicio se cargara esta rta, asi que esta  linea se debe borrar
     var rtaUsuario = document.getElementById(button).value;
     var n =rtaUsuario.localeCompare(rta);
 
@@ -977,27 +979,69 @@ function siguienteItem(){
 }
 
 
-function siguienteitemN0(nivel,categ,item){
+function siguienteitemN0(){
 
  //var resultado = {nivel, categ, item, descrip, pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta};
 
- var resultado;
-alert(45);
 
- /*
-	resultado = Users.select( nivel, categ, item);
+	switch (resultado) {
+	  case 0:
 
-  document.getElementById('b01').textContent= resultado.resp1;
-  document.getElementById('b02').textContent= resultado.resp2;
+        document.getElementById('b01').textContent= 'FISH';
+        document.getElementById('b01').value= 'FISH';
+        document.getElementById('b02').textContent='DOG';
+        document.getElementById('b02').value= 'DOG';
+        document.getElementById('b03').textContent= 'CAT';
+        document.getElementById('b03').value= 'CAT';
 
-  document.getElementById('b03').textContent= resultado.resp3;
+        document.getElementById("img01").src="img/gato.jpg";
 
-  document.getElementById("imgen01").src=resultado.pathImagen1;
+        document.getElementById("s01").src= "sonidos/fish.mp3";
+        document.getElementById("s02").src= "sonidos/dog.mp3";
+        document.getElementById("s03").src= "sonidos/cat.mp3";
+        rta = 'CAT';
+        resultado++;
+        rehacerNivelCero();
+	    break;
+    case 1:
+      document.getElementById('b01').textContent= 'CAT';
+      document.getElementById('b01').value= 'CAT';
+      document.getElementById('b02').textContent='DOG';
+      document.getElementById('b02').value= 'DOG';
+      document.getElementById('b03').textContent= 'HORSE';
+      document.getElementById('b03').value= 'HORSE';
 
-  document.getElementById("s01").src= resultado.pathR1;
-  document.getElementById("s02").src= resultado.pathR2;
-  document.getElementById("s03").src= resultado.pathR3;
-*/
+      document.getElementById("img01").src="img/perro.jpg";
+
+      document.getElementById("s01").src= "sonidos/cat.mp3";
+      document.getElementById("s02").src= "sonidos/dog.mp3";
+      document.getElementById("s03").src= "sonidos/horse.mp3";
+      rta = 'DOG';
+      resultado++;
+      rehacerNivelCero();
+    break;
+    case 2:
+      document.getElementById('b03').textContent= 'CAT';
+      document.getElementById('b03').value= 'CAT';
+      document.getElementById('b02').textContent='FISH';
+      document.getElementById('b02').value= 'FISH';
+      document.getElementById('b01').textContent= 'HORSE';
+      document.getElementById('b01').value= 'HORSE';
+
+      document.getElementById("img01").src="img/pez.jpg";
+
+      document.getElementById("s01").src= "sonidos/horse.mp3";
+      document.getElementById("s02").src= "sonidos/fish.mp3";
+      document.getElementById("s03").src= "sonidos/cat.mp3";
+
+            document.getElementById('bsgte0').textContent= ' ';
+      rta = 'FISH';
+      resultado++;
+      rehacerNivelCero();
+
+	  default:
+  }
+
 }
 
 function backg(){
@@ -1036,12 +1080,12 @@ function fondoCielo() {
 
 function fondoLibro(){
     document.getElementById("bg").src="img/librofondo.jpg";
-    //llamo a la función bgadj() por primera vez al terminar de cargar la página
+    /*llamo a la función bgadj() por primera vez al terminar de cargar la página
     backg();
     //vuelvo a llamar a la función  bgadj() al redimensionar la ventana
     window.onresize = function() {
     backg();
-  }
+  }*/
 }
 
 function rehacerNivelCero(){
