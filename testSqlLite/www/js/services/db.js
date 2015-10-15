@@ -28,6 +28,7 @@ angular.module("starter.services", [])
     for (var i = 0; i < result.rows.length; i++) {
       output.push(result.rows.item(i));
     }
+
     return output;
   }
 
@@ -53,9 +54,14 @@ angular.module("starter.services", [])
 
   self.select = function ( nivel, categ, item) {
     var parameters = [categ, nivel, item];
-    return DBA.query("SELECT nivel, categ, item, descríp , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta  FROM items WHERE id = (?)", parameters);
-      }
-  
+    return DBA.query("SELECT * FROM items WHERE id=1")
+      .then(function(result){
+        return DBA.getAll(result);
+      });
+	  }
+
+
+
   self.get = function(categ, nivel, item) {
     var parameters = [categ, nivel, item];
     return DBA.query("SELECT id, categ, nivel, item, path , descríp , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta  FROM items WHERE id = (?)", parameters)
@@ -64,20 +70,41 @@ angular.module("starter.services", [])
       });
   }
 
-  self.add = function(categ, nivel, item, path , descríp , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta) {
-    var parameters = [categ, nivel, item, path , descríp , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta];
-    return DBA.query("INSERT INTO items (categ, nivel, item, path , descríp , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", parameters);
-  }
-
-  self.remove = function(user) {	
-    var parameters = [user.id];
-    return DBA.query("DELETE FROM items2 WHERE id = (?)", parameters);
-  }
-
-  self.update = function(editUser) {
-    var parameters = [editUser.name, editUser.id];
-    return DBA.query("UPDATE items2 descrip = (?) WHERE id = (?)", parameters);
-  }
-
   return self;
+})
+
+.controller("factoriaController", function($scope, Users){
+
+   var contadorNivelCero = 0;
+   var contadorNivelUno = 0;
+
+  alert(contadorNivelCero);
+
+   $scope.cargarNivelCero = function(nivel, categ, item ) {
+
+   Users.select(nivel, categ, item).then(function(users)
+   {
+          $scope.datos = users;
+          contadorNivelCero++;
+
+          alert($scope.datos[0].categ);
+          document.getElementById('b01').textContent= $scope.datos[0].categ;
+   })
+
+	};
+
+  $scope.cargarNivelUno = function(nivel, categ, item ) {
+
+  Users.select(nivel, categ, item).then(function(users)
+  {
+         $scope.datos = users;
+         alert($scope.datos[0].categ);
+  })
+
+ };
+
+
+
+
+
 })
