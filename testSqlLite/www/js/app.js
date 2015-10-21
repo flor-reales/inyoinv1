@@ -25,9 +25,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       {
           db = window.openDatabase("curso.db", "1.0", "Curso", -1);
       }
-
+    $cordovaSQLite.execute(db, "DROP TABLE items");
 	  $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (id integer primary key,  nivel integer, categ integer, item integer, descríp text, pathImagen1 text, pathImagen2 text, pathImagen3 text, resp1 text, pathR1 text, resp2 text, pathR2 text, resp3 text, pathR3 text, correcta text, frase text, frasecompleta text)");
-	  $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, descríp , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta) VALUES (2,3,1, 'Caballo', 'img\caballo.png','img\gato.png','img\perro.png','Dog','sonidos\perro.mp3', 'Horse','sonidos\caballo.mp3','Cat','sonidos\gato.mp3','Horse',' ',' ')");
+	  $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, descríp , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta) VALUES (1,1,1, 'Caballo', 'img/caballo.png','img/gato.png','img/perro.png','Dog','sonidos/perro.mp3', 'Horse','sonidos/caballo.mp3','Cat','sonidos/gato.mp3','Horse',' ',' ')");
+
+
   });
 })
 
