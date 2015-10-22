@@ -182,14 +182,14 @@ angular.module("starter.services", [])
          flagCheck = 0;
 
          rehacerNivelTres();
-         document.getElementById('b31').textContent= $scope.datos[0].resp2;
-         document.getElementById('b31').value= $scope.datos[0].resp2;
+         document.getElementById('b31').textContent= $scope.datos[0].resp1;
+         document.getElementById('b31').value= $scope.datos[0].resp1;
 
-         document.getElementById('b32').textContent= $scope.datos[0].resp3;
-         document.getElementById('b32').value= $scope.datos[0].resp3;
+         document.getElementById('b32').textContent= $scope.datos[0].resp2;
+         document.getElementById('b32').value= $scope.datos[0].resp2;
 
-         document.getElementById('b33').textContent= $scope.datos[0].resp1;
-         document.getElementById('b33').value= $scope.datos[0].resp1;
+         document.getElementById('b33').textContent= $scope.datos[0].resp3;
+         document.getElementById('b33').value= $scope.datos[0].resp3;
 
 
          document.getElementById("img31").alt=$scope.datos[0].resp1;
@@ -207,6 +207,42 @@ angular.module("starter.services", [])
 */
     })
   };
+
+  $scope.cargarNivelCuatro = function(nivel, categ ) {
+
+      Users.select(nivel, categ, contadorNivelCuatro).then(function(users)
+      {
+         $scope.datos = users;
+         contadorNivelCuatro++;
+
+         rehacerNivelCuatro();
+
+         fraseCorrecta =  $scope.datos[0].frasecompleta;
+         fraseIncompleta =  $scope.datos[0].frase;
+         document.getElementById("frase").innerHTML=$scope.datos[0].frase;
+
+         document.getElementById('b41').textContent= $scope.datos[0].resp1;
+         document.getElementById('b41').value= $scope.datos[0].resp1;
+
+         document.getElementById('b42').textContent= $scope.datos[0].resp2;
+         document.getElementById('b42').value= $scope.datos[0].resp2;
+
+         document.getElementById('b43').textContent= $scope.datos[0].resp3;
+         document.getElementById('b43').value= $scope.datos[0].resp3;
+
+
+         document.getElementById("img41").alt=$scope.datos[0].descríp;
+         document.getElementById("img41").src=$scope.datos[0].pathImagen1;
+
+         rtaNivelCuatro = $scope.datos[0].descríp;
+
+         /*document.getElementById("s12").src= $scope.datos[0].pathR1;
+         document.getElementById("s13").src= $scope.datos[0].pathR2;
+         document.getElementById("s14").src= $scope.datos[0].pathR3;
+*/
+    })
+  };
+
 
   $scope.validacionNivelCero= function(button){
 
@@ -358,5 +394,33 @@ $scope.validacionNivelTres= function(button){
 
 };
 
+
+
+
+
+  $scope.validacionNivelCuatro= function(button){
+    borrar();
+
+    var rtaUsuario = document.getElementById(button).value;
+    var n =rtaUsuario.localeCompare(rtaNivelCuatro);
+
+		if( n!=0 ){
+      musicplay("soundincorrecto");
+      document.getElementById("incorrecto").innerHTML='Try again';
+      document.getElementById("img41").style.border="outset red";
+      document.getElementById(button).style.border="outset red";
+      document.getElementById("frase").innerHTML=fraseIncompleta;
+      document.getElementById(button).disabled='disabled';
+     }else{
+      musicplay("soundcorrecto");
+      document.getElementById("correcto").innerHTML='Very Good!';
+      document.getElementById(button).style.border="outset green";
+      document.getElementById("img41").style.border="outset green";
+      document.getElementById("frase").innerHTML=fraseCorrecta;
+
+    }
+
+
+};
 
 })

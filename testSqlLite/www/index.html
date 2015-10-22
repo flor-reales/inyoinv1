@@ -275,7 +275,7 @@
 		<!-- eleccion categoria de nivel 2 IU-003 -->
 		<div id="categoria2" style= "visibility:hidden">
 	    <div id="categorias">
-				<button  class="button button-full button-assertive" ng-click="cargarNivelTres(2,1)" onclick="mostrar('nivel2','categoria2')" >  COLOURS
+				<button  class="button button-full button-assertive" ng-click="cargarNivelTres(2,1)" onclick="mostrar('nivel3','categoria2')" >  COLOURS
                     <img  src="img\colores.png" width="35px" height="35px"></button>
 
 				<button  class="button button-full button-energized" ng-click="cargarNivelTres(2,2)" onclick="mostrar('nivel3','categoria2')" >  ANIMALS
@@ -312,25 +312,25 @@
 		<!-- eleccion categoria de nivel 3 IU-003 -->
 		<div id="categoria3" style= "visibility:hidden">
 		  <div id="categorias">
-				<button  class="button button-full button-assertive" onclick="mostrar('nivel3','categoria3')" >  ADJECTIVES
+				<button  class="button button-full button-assertive" ng-click="cargarNivelTres(3,1)" onclick="mostrar('nivel3','categoria3')" >  ADJECTIVES
             <img  src="img\adjetivos.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" onclick="mostrar('nivel3','categoria3')" >  DAYS
+				<button  class="button button-full button-energized" ng-click="cargarNivelTres(3,2)" onclick="mostrar('nivel3','categoria3')" >  DAYS
             <img  src="img\dias.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" onclick="mostrar('nivel3','categoria3')" >  NUMBERS
+				<button  class="button button-full button-balanced" ng-click="cargarNivelTres(3,3)" onclick="mostrar('nivel3','categoria3')" >  NUMBERS
             <img  src="img\numeros.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" onclick="mostrar('nivel3','categoria3')" >  TRANSPORT
+				<button class="button button-full button-positive" ng-click="cargarNivelTres(3,4)" onclick="mostrar('nivel3','categoria3')" >  TRANSPORT
             <img  src="img\transporte.png" width="55px" height="35px"></button>
 
-				<button class="button button-full button-royal" onclick="mostrar('nivel3','categoria3')" >  GREETINGS
+				<button class="button button-full button-royal" ng-click="cargarNivelTres(3,5)" onclick="mostrar('nivel3','categoria3')" >  GREETINGS
             <img  src="img\saludos.png" width="45px" height="35px"></button>
 
-				<button class="button button-full button-stable" onclick="mostrar('nivel3','categoria3')" >  VERBS
+				<button class="button button-full button-stable" ng-click="cargarNivelTres(3,6)" onclick="mostrar('nivel3','categoria3')" >  VERBS
             <img  src="img\verbos.png" width="45px" height="35px"></button>
 
-				<button class="button button-full button-dark" onclick="mostrar('nivel3','categoria3')" >  PERSON
+				<button class="button button-full button-dark" ng-click="cargarNivelTres(3,7)" onclick="mostrar('nivel3','categoria3')" >  PERSON
             <img  src="img\persona.png" width="35px" height="35px"></button>
 			</div>
 
@@ -358,7 +358,7 @@
 				<button class="button button-full button-balanced" onclick="mostrar('nivel4','categoria4')" >  QUESTIONS
               <img  src="img\preguntas.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" onclick="mostrar('nivel4','categoria4')" >  ADVERBS
+				<button class="button button-full button-positive" ng-click="cargarNivelCuatro(4,4)" onclick="mostrar('nivel4','categoria4')" >  ADVERBS
               <img  src="img\adverbios.png" width="35px" height="35px"></button>
 
 				<button class="button button-full button-royal" onclick="mostrar('nivel4','categoria4')" >  HOUR
@@ -575,18 +575,18 @@
         <button onclick="rehacerNivelCuatro()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
 
-      <div id="imgcenterunique"> <img id="img41" src="img\gatosobremesa.jpg" width="120px"></div>
+      <div id="imgcenterunique"> <img id="img41" width="120px"></div>
 
       <div id="frase"> THE CAT IS ___ THE TABLE </div>
 
       <div id="brta1">
-      <button id=b41 class="button  button-energized" onclick="validacionNivelCuatro('b41')" value="ON">   ON  </button>
+      <button id=b41 class="button  button-energized" ng-click="validacionNivelCuatro('b41')" value="ON">   ON  </button>
       </div>
       <div id="brta2">
-      <button id=b42 class="button  button-energized" onclick="validacionNivelCuatro('b42')" value="IN">  IN </button>
+      <button id=b42 class="button  button-energized" ng-click="validacionNivelCuatro('b42')" value="IN">  IN </button>
       </div>
       <div id="brta3">
-      <button id=b43 class="button button-energized"  onclick="validacionNivelCuatro('b43')" value="UNDER">  UNDER  </button>
+      <button id=b43 class="button button-energized"  ng-click="validacionNivelCuatro('b43')" value="UNDER">  UNDER  </button>
       </div>
 
       <div id="bsgte">
@@ -608,7 +608,7 @@
 		<!-- catalogo nivel 0-->
 		<div id="catalogo0" style= "visibility:hidden">
 
-	    <div id="imgaprender"> <img id=imgap src="img\caballo.png" width="150px"></div>
+	    <div id="imgaprender"> <img id=imgap src="img\0301.jpg" width="150px"></div>
 
 			<div id="baprender">
 				<button id=bapIngles class="button  button-assertive" >   HORSE  </button>
@@ -721,8 +721,7 @@
         rta='HORSE';
         var resultado=0;
     var rtaIncorrecta = new String;
-    var flag2 = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 2
-    var flag4 = 0;  //Se inicializara en cero cada vez que se cargue un item del nivel 4
+
     var flagCheck = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 4
 
 
@@ -1061,7 +1060,7 @@ function rehacerNivelCuatro(){
   document.getElementById("b43").style.border="outset transparent";
   document.getElementById("img41").style.border="outset transparent";
 
-  document.getElementById("frase").innerHTML=fraseIncompleta;
+//  document.getElementById("frase").innerHTML=fraseIncompleta;
 
 }
 
