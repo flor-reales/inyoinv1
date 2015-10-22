@@ -54,7 +54,7 @@ angular.module("starter.services", [])
 
   self.select = function ( nivel, categ, item) {
     var parameters = [categ, nivel, item];
-    return DBA.query("SELECT * FROM items WHERE id=1")
+    return DBA.query("SELECT * FROM items WHERE  categ = (?) and nivel = (?) and item = (?)", parameters)
       .then(function(result){
         return DBA.getAll(result);
       });
@@ -64,7 +64,7 @@ angular.module("starter.services", [])
 
   self.get = function(categ, nivel, item) {
     var parameters = [categ, nivel, item];
-    return DBA.query("SELECT id, categ, nivel, item, path , descríp , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta  FROM items WHERE id = (?)", parameters)
+    return DBA.query("SELECT id, categ, nivel, item, path , desc , resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta  FROM items WHERE id = (?)", parameters)
       .then(function(result) {
         return DBA.getById(result);
       });
@@ -75,35 +75,288 @@ angular.module("starter.services", [])
 
 .controller("factoriaController", function($scope, Users){
 
-   var contadorNivelCero = 0;
-   var contadorNivelUno = 0;
+   var contadorNivelCero = 1;
+   var contadorNivelUno = 1;
+   var contadorNivelDos = 1;
+   var contadorNivelTres = 1;
+   var contadorNivelCuatro = 1;
+   var flagCheck = 0;
+   $scope.cargarNivelCero = function(nivel, categ) {
 
-//  alert(contadorNivelCero);
-
-   $scope.cargarNivelCero = function(nivel, categ, item ) {
-
-   Users.select(nivel, categ, item).then(function(users)
-   {
+     Users.select(nivel, categ, contadorNivelCero).then(function(users)
+     {
           $scope.datos = users;
           contadorNivelCero++;
 
-        //  document.getElementById('b01').textContent= $scope.datos[0].categ;
+        rehacerNivelCero();
+		    document.getElementById('b01').textContent= $scope.datos[0].resp1;
+        document.getElementById('b01').value= $scope.datos[0].resp1;
+        document.getElementById('b02').textContent=$scope.datos[0].resp2;
+        document.getElementById('b02').value= $scope.datos[0].resp2;
+        document.getElementById('b03').textContent= $scope.datos[0].resp3;
+        document.getElementById('b03').value= $scope.datos[0].resp3;
+
+        document.getElementById("img01").src=$scope.datos[0].pathImagen1;
+
+        document.getElementById("s01").src= $scope.datos[0].pathR1;
+        document.getElementById("s02").src= $scope.datos[0].pathR2;
+        document.getElementById("s03").src= $scope.datos[0].pathR3;
+
+        rtaNivelCero = $scope.datos[0].desc;
    })
 
+//nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta
 	};
 
-  $scope.cargarNivelUno = function(nivel, categ, item ) {
+  $scope.cargarNivelUno = function(nivel, categ ) {
 
-  Users.select(nivel, categ, item).then(function(users)
-  {
+      Users.select(nivel, categ, contadorNivelUno).then(function(users)
+      {
          $scope.datos = users;
-//         alert($scope.datos[0].categ);
-  })
+         contadorNivelUno++;
 
+         rehacerNivelUno();
+         document.getElementById('b11').textContent= $scope.datos[0].desc;
+         document.getElementById('b11').value= $scope.datos[0].desc;
+
+
+         document.getElementById("s11").src= $scope.datos[0].frasecompleta;
+
+         document.getElementById("img11").alt=$scope.datos[0].resp1;
+         document.getElementById("img12").alt=$scope.datos[0].resp2;
+         document.getElementById("img13").alt=$scope.datos[0].resp3;
+
+
+         document.getElementById("img11").src=$scope.datos[0].pathImagen1;
+         document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+         document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+
+         document.getElementById("s12").src= $scope.datos[0].pathR1;
+         document.getElementById("s13").src= $scope.datos[0].pathR2;
+         document.getElementById("s14").src= $scope.datos[0].pathR3;
+
+         rtaNivelUno = $scope.datos[0].desc;
+    })
+  };
+
+  $scope.cargarNivelDos = function(nivel, categ ) {
+
+      Users.select(nivel, categ, contadorNivelDos).then(function(users)
+      {
+         $scope.datos = users;
+         contadorNivelDos++;
+
+         rehacerNivelDos();
+         document.getElementById('b21').textContent= $scope.datos[0].resp1;
+         document.getElementById('b21').value= $scope.datos[0].resp1;
+
+         document.getElementById('b22').textContent= $scope.datos[0].resp2;
+         document.getElementById('b22').value= $scope.datos[0].resp2;
+
+         document.getElementById('b23').textContent= $scope.datos[0].resp3;
+         document.getElementById('b23').value= $scope.datos[0].resp3;
+
+
+         document.getElementById("img21").alt=$scope.datos[0].resp1;
+         document.getElementById("img21").src=$scope.datos[0].pathImagen1;
+
+
+
+         document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+         document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+
+/*         document.getElementById("s12").src= $scope.datos[0].pathR1;
+         document.getElementById("s13").src= $scope.datos[0].pathR2;
+         document.getElementById("s14").src= $scope.datos[0].pathR3;
+*/
+         rtaIncorrectaNivelDos = $scope.datos[0].frase;
+    })
+  };
+
+  $scope.cargarNivelTres = function(nivel, categ ) {
+
+      Users.select(nivel, categ, contadorNivelTres).then(function(users)
+      {
+         $scope.datos = users;
+         contadorNivelTres++;
+         flagCheck = 0;
+
+         rehacerNivelTres();
+         document.getElementById('b31').textContent= $scope.datos[0].resp2;
+         document.getElementById('b31').value= $scope.datos[0].resp2;
+
+         document.getElementById('b32').textContent= $scope.datos[0].resp3;
+         document.getElementById('b32').value= $scope.datos[0].resp3;
+
+         document.getElementById('b33').textContent= $scope.datos[0].resp1;
+         document.getElementById('b33').value= $scope.datos[0].resp1;
+
+
+         document.getElementById("img31").alt=$scope.datos[0].resp1;
+         document.getElementById("img31").src=$scope.datos[0].pathImagen1;
+
+         document.getElementById("img32").alt=$scope.datos[0].resp2;
+         document.getElementById("img32").src=$scope.datos[0].pathImagen2;
+
+         document.getElementById("img33").alt=$scope.datos[0].resp3;
+         document.getElementById("img33").src=$scope.datos[0].pathImagen3;
+
+         /*document.getElementById("s12").src= $scope.datos[0].pathR1;
+         document.getElementById("s13").src= $scope.datos[0].pathR2;
+         document.getElementById("s14").src= $scope.datos[0].pathR3;
+*/
+    })
+  };
+
+  $scope.validacionNivelCero= function(button){
+
+      borrar();
+     var rtaUsuario = document.getElementById(button).value;
+     var n =rtaUsuario.localeCompare(rtaNivelCero);
+
+ 		if( n!=0 ){
+
+       document.getElementById("soundincorrecto").play();
+       document.getElementById("incorrecto").innerHTML='Try again';
+       document.getElementById("img01").style.border="outset red";
+       document.getElementById(button).style.border="outset red";
+       document.getElementById(button).disabled='disabled';
+      }else{
+       document.getElementById("soundcorrecto").play();
+       document.getElementById("correcto").innerHTML='Very Good!';
+       document.getElementById(button).style.border="outset green";
+       document.getElementById("img01").style.border="outset green";
+
+   }
  };
 
+ $scope.validacionNivelUno= function(button){
+   borrar();
+
+   var rtaUsuario2 = document.getElementById(button).alt;
+   var n =rtaUsuario2.localeCompare(rtaNivelUno);
+
+   if( n != 0 ){
+     musicplay("soundincorrecto");
+     document.getElementById("incorrecto").innerHTML='Try again';
+     document.getElementById("b11").style.border="outset red";
+     document.getElementById(button).style.border="outset red";
+     document.getElementById("img11").disabled=true;
+   }else{
+       musicplay("soundcorrecto");
+       document.getElementById("correcto").innerHTML='Very Good!';
+       document.getElementById("b11").style.border="outset green";
+       document.getElementById(button).style.border="outset green";
+       }
+
+};
+
+  $scope.validacionNivelDos= function(button){
+    borrar();
+
+    //rtaIncorrecta='APPLE'; //Cuando se carga el ejercicio se cargara esta rta, asi que esta  linea se debe borrar
+    var rtaUsuario = document.getElementById(button).value;
+    var n =rtaUsuario.localeCompare(rtaIncorrectaNivelDos);
+
+    if( n == 0 ){
+      musicplay("soundincorrecto");
+      document.getElementById("incorrecto").innerHTML='Try again';
+      document.getElementById("img21").style.border="outset red";
+      document.getElementById(button).style.border="outset red";
+      document.getElementById(button).disabled=true;
+    }else{
+      musicplay("soundcorrecto");
+      document.getElementById("correcto").innerHTML='Very Good!';
+      document.getElementById(button).style.border="outset green";
+      document.getElementById("img21").style.border="outset green";
+    }
 
 
+};
+
+$scope.validacionNivelTres= function(button){
+
+  borrar();
+  if(flagCheck == 0){
+
+    //Apago boton clickeado y borde punteado
+    document.getElementById("bbi31").style.border="solid transparent";
+    document.getElementById(button).style.display="none";
+    //Guardo los valores a comparar para validar respuesta
+    var rtaNivelTres= document.getElementById(button).value;
+    var imagenvalue= document.getElementById("img31").alt;
+    //Prendo boton oculto y modifico atributos
+    document.getElementById("brtaelegida31").textContent= rtaNivelTres;
+
+    document.getElementById("rtaoculta31").style.display = "block";
+    //Compruebo respuesta
+    var n =rtaNivelTres.localeCompare(imagenvalue);
+    if( n != 0 ){
+        musicplay("soundincorrecto");
+        document.getElementById("brtaelegida31").style.border= "outset red";
+          window.setTimeout(function(){
+                    document.getElementById(button).style.display="block";
+                    document.getElementById("rtaoculta31").style.display = "none";
+                    document.getElementById("bbi31").style.border="dashed black";
+           },1400);
+    }else{
+          document.getElementById("brtaelegida31").style.border= "outset blue";
+          document.getElementById("img32").style.border="outset magenta";
+          document.getElementById("brtaelegida31").disabled='disabled';
+          musicplay("soundcorrecto");
+          flagCheck++;
+    }
+  }else{
+    if(flagCheck == 1){
+
+      //Apago boton clickeado y borde punteado
+          document.getElementById("bbi32").style.border="solid transparent";
+          document.getElementById(button).style.display="none";
+      //Guardo los valores a comparar para validar respuesta
+          var rtaNivelTres= document.getElementById(button).value;
+          var imagenvalue= document.getElementById("img32").alt;
+      //Prendo boton oculto y modifico atributos
+          document.getElementById("brtaelegida32").textContent= rtaNivelTres;
+
+          document.getElementById("rtaoculta32").style.display = "block";
+      //Compruebo respuesta
+          var n =rtaNivelTres.localeCompare(imagenvalue);
+          if( n != 0 ){
+                musicplay("soundincorrecto");
+                document.getElementById("brtaelegida32").style.border= "outset red";
+                window.setTimeout(function(){
+                          document.getElementById(button).style.display="block";
+                          document.getElementById("rtaoculta32").style.display = "none";
+                          document.getElementById("bbi32").style.border="dashed black";
+                 },1400);
+          }else{
+                document.getElementById("brtaelegida32").style.border= "outset magenta";
+                document.getElementById("img33").style.border="outset OrangeRed";
+                document.getElementById("brtaelegida32").disabled='disabled';
+                musicplay("soundcorrecto");
+                flagCheck++;
+          }
+
+    }else{
+
+            //Apago boton clickeado y borde punteado
+                document.getElementById("bbi33").style.border="solid transparent";
+                document.getElementById(button).style.display="none";
+            //Prendo boton oculto y modifico atributos
+                var rtaNivelTres= document.getElementById(button).value;
+                document.getElementById("brtaelegida33").textContent= rtaNivelTres;
+                document.getElementById("brtaelegida33").style.border= "outset OrangeRed";
+                document.getElementById("rtaoculta33").style.display = "block";
+            //Todo salio correcto
+                document.getElementById("brtaelegida33").disabled='disabled';
+                musicplay("soundcorrecto");
+                document.getElementById("correcto").innerHTML='Very Good!';
+                botonesVerdes();
+    }
+  }
+
+
+};
 
 
 })

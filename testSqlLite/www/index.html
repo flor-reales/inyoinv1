@@ -77,22 +77,21 @@
 </style>
 
 </head>
+<body  ng-app="starter" ng-controller="factoriaController">
 
-<body  ng-app="starter" ng-controller="AppExit" >
-
-    <ion-pane>
+    <ion-pane >
       <ion-content>
       <img id="bg" src="img/cielo.png" alt="fondo" />
 
 
-    <audio id="audioAprender" src="sonidos/horse.mp3"></audio>
-	  <audio id="s01" src="sonidos/dog.mp3"></audio>
-		<audio id="s02" src="sonidos/horse.mp3"></audio>
-		<audio id="s03" src="sonidos/cat.mp3"></audio>
-    <audio id="s11" src="sonidos/fish.mp3"></audio>
-    <audio id="s12" src="sonidos/bee.mp3"></audio>
-    <audio id="s13" src="sonidos/spider.mp3"></audio>
-    <audio id="s14" src="sonidos/fish.mp3"></audio>
+    <audio id="audioAprender" src="sonidos/0101.mp3"></audio>
+	  <audio id="s01" src="sonidos/0101.mp3"></audio>
+		<audio id="s02" src="sonidos/0101.mp3"></audio>
+		<audio id="s03" src="sonidos/0101.mp3"></audio>
+    <audio id="s11" src="sonidos/0101.mp3"></audio>
+    <audio id="s12" src="sonidos/0101.mp3"></audio>
+    <audio id="s13" src="sonidos/0101.mp3"></audio>
+    <audio id="s14" src="sonidos/0101.mp3"></audio>
     <audio id="soundcorrecto" src="sonidos/correcto.mp3"></audio>
     <audio id="soundincorrecto" src="sonidos/incorrecto.mp3"></audio>
 
@@ -117,7 +116,7 @@
 			</div>
 
 			<div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
     	</div>
 
@@ -145,7 +144,7 @@
 		    </div>
 
       <div id="bizq">
-        <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+        <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
         <img src="img\salir.png" width="45px" height="45px"></button>
       </div>
 
@@ -170,7 +169,7 @@
 		    </div>
 
         <div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
         </div>
 
@@ -193,7 +192,7 @@
 				      <button  class="button button-full button-royal" onclick="mostrar('acerca','ajuste')" >  ABOUT INYOIN </button>
         </div>
         <div id="bizq">
-            <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+            <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
             <img src="img\salir.png" width="45px" height="45px"></button>
         </div>
 
@@ -208,16 +207,16 @@
 	    <div id="categorias">
 
 
-		  <button ng-controller="factoriaController" class="button button-full button-assertive"  ng-click="cargarNivelCero(0,1,3)" onclick="mostrar('nivel0','categoria0')" >
+		  <button  class="button button-full button-assertive"  ng-click="cargarNivelCero(0,1)" onclick="mostrar('nivel0','categoria0')" >
          NUMBERS  <img src="img\numeros.png" width="35px" height="35px"></button>
 
-      <button  class="button button-full button-energized" onclick="mostrar('nivel0','categoria0')" >  COLOURS
+      <button  class="button button-full button-energized" ng-click="cargarNivelCero(0,2)" onclick="mostrar('nivel0','categoria0')" >  COLOURS
               <img  src="img\colores.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" onclick="mostrar('nivel0','categoria0')" >  ANIMALS
+				<button  class="button button-full button-balanced" ng-click="cargarNivelCero(0,3)" onclick="mostrar('nivel0','categoria0')" >  ANIMALS
               <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-positive" onclick="mostrar('nivel0','categoria0')" >  TOYS
+				<button  class="button button-full button-positive"  ng-click="cargarNivelCero(0,4)" onclick="mostrar('nivel0','categoria0')" >  TOYS
             <img  src="img\juguetes.png" width="35px" height="35px"></button>
 
 				<button  class="button button-full button-royal" onclick="mostrar('nivel0','categoria0')">  BODY
@@ -228,7 +227,7 @@
 			</div>-->
 
       <div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
       </div>
 
@@ -242,30 +241,27 @@
 		<!-- eleccion categoria de nivel 1 IU-003 -->
 		<div id="categoria1" style= "visibility:hidden">
 		    <div id="categorias">
-				<button class="button button-full button-assertive" onclick="mostrar('nivel1','categoria1')" > COLOURS
-            <img  src="img\colores.png" width="35px" height="35px"></button>
+				<button class="button button-full button-assertive" ng-click="cargarNivelUno(1,1)" onclick="mostrar('nivel1','categoria1')" >
+          ANIMALS <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-energized" onclick="mostrar('nivel1','categoria1')" >  ANIMALS
-            <img src="img\animales.png" width="35px" height="35px"></button>
+				<button class="button button-full button-energized" ng-click="cargarNivelUno(1,2)"  onclick="mostrar('nivel1','categoria1')" >
+          FRUITS <img src="img\frutas.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" onclick="mostrar('nivel1','categoria1')" >  FRUITS
-            <img  src="img\frutas.png" width="35px" height="35px"></button>
-
-				<button class="button button-full button-positive" onclick="mostrar('nivel1','categoria1')" >  FURNITURE
+				<button  class="button button-full button-balanced" ng-click="cargarNivelUno(1,3)"  onclick="mostrar('nivel1','categoria1')" >  FURNITURE
             <img  src="img\mueble.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-royal" onclick="mostrar('nivel1','categoria1')" >  BODY
+				<button class="button button-full button-positive" ng-click="cargarNivelUno(1,4)"  onclick="mostrar('nivel1','categoria1')" >  BODY
             <img  src="img\cuerpo.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-stable" onclick="mostrar('nivel1','categoria1')" > CLOTHES
-            <img src="img\ropa.png" width="35px" height="35px"></button>
+				<button class="button button-full button-royal" onclick="mostrar('nivel1','categoria1')" >  CLOTHES
+            <img  src="img\ropa.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-dark" onclick="mostrar('nivel1','categoria1')" >  PLACES
-            <img  src="img\casa.png" width="35px" height="35px"></button>
-		    </div>
+				<button class="button button-full button-stable" onclick="mostrar('nivel1','categoria1')" > PLACES
+            <img src="img\casa.png" width="35px" height="35px"></button>
+
 
         <div id="bizq">
-            <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+            <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
             <img src="img\salir.png" width="45px" height="45px"></button>
         </div>
 
@@ -279,30 +275,30 @@
 		<!-- eleccion categoria de nivel 2 IU-003 -->
 		<div id="categoria2" style= "visibility:hidden">
 	    <div id="categorias">
-				<button  class="button button-full button-assertive" onclick="mostrar('nivel2','categoria2')" >  COLOURS
+				<button  class="button button-full button-assertive" ng-click="cargarNivelTres(2,1)" onclick="mostrar('nivel2','categoria2')" >  COLOURS
                     <img  src="img\colores.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" onclick="mostrar('nivel3','categoria2')" >  ANIMALS
+				<button  class="button button-full button-energized" ng-click="cargarNivelTres(2,2)" onclick="mostrar('nivel3','categoria2')" >  ANIMALS
                     <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-balanced" onclick="mostrar('nivel3','categoria2')" >  VEGETABLES
+				<button class="button button-full button-balanced" ng-click="cargarNivelTres(2,3)" onclick="mostrar('nivel3','categoria2')" >  VEGETABLES
                     <img  src="img\verduras.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" onclick="mostrar('nivel3','categoria2')" >  CLOTHES
+				<button class="button button-full button-positive" ng-click="cargarNivelTres(2,4)" onclick="mostrar('nivel3','categoria2')" >  CLOTHES
                     <img  src="img\ropa.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-royal" onclick="mostrar('nivel3','categoria2')" >  BODY
+				<button class="button button-full button-royal" ng-click="cargarNivelTres(2,5)" onclick="mostrar('nivel3','categoria2')" >  BODY
                     <img src="img\cuerpo.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-dark" onclick="mostrar('nivel2','categoria2')" > FRUITS
+				<button class="button button-full button-dark" ng-click="cargarNivelDos(2,6)" onclick="mostrar('nivel2','categoria2')" > FRUITS
                     <img  src="img\frutas.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-stable" onclick="mostrar('nivel3','categoria2')" >  PLACES
+				<button class="button button-full button-stable" ng-click="cargarNivelTres(2,7)" onclick="mostrar('nivel3','categoria2')" >  PLACES
                     <img  src="img\lugares.png" width="55px" height="35px">  </button>
       </div>
 
       <div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
       </div>
 
@@ -316,8 +312,8 @@
 		<!-- eleccion categoria de nivel 3 IU-003 -->
 		<div id="categoria3" style= "visibility:hidden">
 		  <div id="categorias">
-				<button  class="button button-full button-assertive" onclick="mostrar('nivel3','categoria3')" >  GREETINGS
-            <img  src="img\saludos.png" width="35px" height="35px"></button>
+				<button  class="button button-full button-assertive" onclick="mostrar('nivel3','categoria3')" >  ADJECTIVES
+            <img  src="img\adjetivos.png" width="35px" height="35px"></button>
 
 				<button  class="button button-full button-energized" onclick="mostrar('nivel3','categoria3')" >  DAYS
             <img  src="img\dias.png" width="35px" height="35px"></button>
@@ -328,8 +324,8 @@
 				<button class="button button-full button-positive" onclick="mostrar('nivel3','categoria3')" >  TRANSPORT
             <img  src="img\transporte.png" width="55px" height="35px"></button>
 
-				<button class="button button-full button-royal" onclick="mostrar('nivel3','categoria3')" >  ADJECTIVES
-            <img  src="img\adjetivos.png" width="45px" height="35px"></button>
+				<button class="button button-full button-royal" onclick="mostrar('nivel3','categoria3')" >  GREETINGS
+            <img  src="img\saludos.png" width="45px" height="35px"></button>
 
 				<button class="button button-full button-stable" onclick="mostrar('nivel3','categoria3')" >  VERBS
             <img  src="img\verbos.png" width="45px" height="35px"></button>
@@ -339,7 +335,7 @@
 			</div>
 
       <div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
       </div>
 
@@ -353,14 +349,14 @@
 		<!-- eleccion categoria de nivel 4 IU-003 -->
 		<div id="categoria4" style= "visibility:hidden">
       <div id="categorias">
-				<button  class="button button-full button-assertive" onclick="mostrar('nivel4','categoria4')" >  QUESTIONS
-              <img  src="img\preguntas.png" width="35px" height="35px"></button>
+				<button  class="button button-full button-assertive" onclick="mostrar('nivel4','categoria4')" >  SEASONS
+              <img  src="img\estaciones.png" width="35px" height="35px"></button>
 
 				<button  class="button button-full button-energized" onclick="mostrar('nivel4','categoria4')" >  MONTHS
               <img  src="img\meses.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-balanced" onclick="mostrar('nivel4','categoria4')" >  SEASONS
-              <img  src="img\estaciones.png" width="35px" height="35px"></button>
+				<button class="button button-full button-balanced" onclick="mostrar('nivel4','categoria4')" >  QUESTIONS
+              <img  src="img\preguntas.png" width="35px" height="35px"></button>
 
 				<button class="button button-full button-positive" onclick="mostrar('nivel4','categoria4')" >  ADVERBS
               <img  src="img\adverbios.png" width="35px" height="35px"></button>
@@ -368,12 +364,10 @@
 				<button class="button button-full button-royal" onclick="mostrar('nivel4','categoria4')" >  HOUR
               <img  src="img\hora.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-stable" onclick="mostrar('nivel4','categoria4')" > PHRASES
-              <img  src="img\frases.png" width="65px" height="35px"></button>
 	    </div>
 
       <div id="bizq">
-          <button  ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
+          <button  ng-controller="AppExit" ng-click="exit()"   style="border:transparent 1px solid;background:transparent;">
           <img src="img\salir.png" width="45px" height="45px"></button>
       </div>
 
@@ -391,16 +385,16 @@
         <button onclick="rehacerNivelCero()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
 
-		  <div id="imgcenterunique"><img id="img01" src="img\caballo.png" width="150px" height="150 px"></div>
+		  <div id="imgcenterunique"><img id="img01" width="150px" height="150 px"></div>
 
       <div id="brta1">
-			<button id=b01 class="button  button-energized" onclick="validacionNivelCero('b01')" value="DOG">   DOG  </button>
+			<button id=b01 class="button  button-energized" ng-click="validacionNivelCero('b01')" value="DOG">   DOG  </button>
 		  </div>
 		  <div id="brta2">
-			<button id=b02 class="button  button-energized" onclick="validacionNivelCero('b02')" value="HORSE">  HORSE </button>
+			<button id=b02 class="button  button-energized" ng-click="validacionNivelCero('b02')" value="HORSE">  HORSE </button>
 		  </div>
 		  <div id="brta3">
-			<button id=b03 class="button  button-energized" onclick="validacionNivelCero('b03')" value="CAT">  CAT   </button>
+			<button id=b03 class="button  button-energized" ng-click="validacionNivelCero('b03')" value="CAT">  CAT   </button>
 		  </div>
 
       <div id="bplay1">
@@ -416,7 +410,7 @@
           <img src="img\play.png" width="50px" height="50px"> </button>
 		  </div>
 
-      <div id="bsgte" onclick="siguienteitemN0()">
+      <div  id="bsgte"  ng-click="cargarNivelCero(0,1)">
 				<button id="bsgte0" style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -449,20 +443,20 @@
       <button id="b11" class="button  button-energized" style="border: 3px solid transparent;" > FISH </button>
       </div>
 
-      <div id="brta1"><img id="img11" src="img\ABEJA.jpg"  width="100px" height="100px" style="border:transparent 1px solid;"
-                      onclick="validacionNivelUno('img11');reproducirNivelUno('s12');this.onclick = '' " alt="BEE">
+      <div id="brta1"><img id="img11" width="100px" height="100px" style="border:transparent 1px solid;"
+            ng-click="validacionNivelUno('img11')" onclick="reproducirNivelUno('s12');this.onclick = '' " alt="BEE">
       </div>
 
-      <div id="brta2"><img id="img12" src="img\ARANIA.jpg"  width="100px" height="100px" style="border:transparent 1px solid;"
-                      onclick="validacionNivelUno('img12');reproducirNivelUno('s13'); this.onclick = ''" alt="SPIDER">
+      <div id="brta2"><img id="img12" width="100px" height="100px" style="border:transparent 1px solid;"
+            ng-click="validacionNivelUno('img12')"  onclick="reproducirNivelUno('s13'); this.onclick = ''" alt="SPIDER">
       </div>
 
-      <div id="brta3"><img id="img13" src="img\PEZ.jpg"  width="100px" height="100px" style="border:transparent 1px solid;"
-                      onclick="validacionNivelUno('img13');reproducirNivelUno('s14'); this.onclick = ''" alt="FISH">
+      <div id="brta3"><img id="img13"  width="100px" height="100px" style="border:transparent 1px solid;"
+            ng-click="validacionNivelUno('img13')" onclick="reproducirNivelUno('s14'); this.onclick = ''" alt="FISH">
       </div>
 
       <div id="bsgte">
-				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+				<button ng-click="cargarNivelUno(1,1)" style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
       <div id="bizq">
@@ -484,17 +478,17 @@
         <button onclick="rehacerNivelDos()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
 
-		  <div id="imgcenterunique"> <img id=img21 src="img\LIMON.jpg" width="100px" height="100px"></div>
+		  <div id="imgcenterunique"> <img id=img21 width="100px" height="100px"></div>
 
 
 		  <div id="brta1">
-			<button id=b21 class="button  button-energized" onclick="validacionNivelDos('b21')" value="APPLE">   APPLE  </button>
+			<button id=b21 class="button  button-energized" ng-click="validacionNivelDos('b21')" value="APPLE">   APPLE  </button>
 		  </div>
 		  <div id="brta2">
-			<button id=b22 class="button  button-energized" onclick="validacionNivelDos('b22')" value="YELLOW">  YELLOW </button>
+			<button id=b22 class="button  button-energized" ng-click="validacionNivelDos('b22')" value="YELLOW">  YELLOW </button>
 		  </div>
 		  <div id="brta3">
-			<button id=b23 class="button  button-energized"onclick="validacionNivelDos('b23')" value="LEMON" >  LEMON  </button>
+			<button id=b23 class="button  button-energized" ng-click="validacionNivelDos('b23')" value="LEMON" >  LEMON  </button>
 		  </div>
 
       <div id="bsgte">
@@ -520,9 +514,9 @@
         <button onclick="rehacerNivelTres()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
 
-      <div id="imgleft"  > <img id="img31" src="img\caballo.png" width="100px" height="100px" style="border:blue 3px outset;" alt="HORSE"></div>
-      <div id="imgcenter"> <img id="img32" src="img\gato.jpg" width="100px" height="100px" alt="CAT"></div>
-      <div id="imgright" > <img id="img33" src="img\perro.jpg" width="100px" height="100px" alt="DOG"></div>
+      <div id="imgleft"  > <img id="img31"  width="100px" height="100px" style="border:blue 3px outset;" alt="HORSE"></div>
+      <div id="imgcenter"> <img id="img32"  width="100px" height="100px" alt="CAT"></div>
+      <div id="imgright" > <img id="img33"  width="100px" height="100px" alt="DOG"></div>
 
       <div id="bbajoimg1">
       <button id=bbi31 style="border:black dashed;background:transparent;width:90px; height:45px">   </button>
@@ -549,13 +543,13 @@
           </div>
 
       <div id="brta1">
-      <button id=b31 class="button  button-energized" onclick="validacionNivelTres('b31')" value="DOG">   DOG  </button>
+      <button id=b31 class="button  button-energized" ng-click="validacionNivelTres('b31')" value="DOG">   DOG  </button>
       </div>
       <div id="brta2">
-      <button id=b32 class="button  button-energized" onclick="validacionNivelTres('b32')" value="HORSE">  HORSE </button>
+      <button id=b32 class="button  button-energized" ng-click="validacionNivelTres('b32')" value="HORSE">  HORSE </button>
       </div>
       <div id="brta3">
-      <button id=b33 class="button  button-energized" onclick="validacionNivelTres('b33')" value="CAT">  CAT   </button>
+      <button id=b33 class="button  button-energized" ng-click="validacionNivelTres('b33')" value="CAT">  CAT   </button>
       </div>
 
       <div id="bsgte">
@@ -730,7 +724,7 @@
     var flag2 = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 2
     var flag4 = 0;  //Se inicializara en cero cada vez que se cargue un item del nivel 4
     var flagCheck = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 4
-	var Nivel0Cat1Item = 99;
+
 
 function musicplay(button){
 			document.getElementById(button).play();
@@ -740,47 +734,6 @@ function reproducirNivelUno(sound){
  window.setTimeout(function(){ musicplay(sound); },1400);
 }
 
-function validacionNivelCero(button){
-    borrar();
-    //rta='HORSE'; //Cuando se carga el ejercicio se cargara esta rta, asi que esta  linea se debe borrar
-    var rtaUsuario = document.getElementById(button).value;
-    var n =rtaUsuario.localeCompare(rta);
-
-		if( n!=0 ){
-      musicplay("soundincorrecto");
-      document.getElementById("incorrecto").innerHTML='Try again';
-      document.getElementById("img01").style.border="outset red";
-      document.getElementById(button).style.border="outset red";
-      document.getElementById(button).disabled='disabled';
-     }else{
-      musicplay("soundcorrecto");
-      document.getElementById("correcto").innerHTML='Very Good!';
-      document.getElementById(button).style.border="outset green";
-      document.getElementById("img01").style.border="outset green";
-
-  }
- }
-
-function validacionNivelUno(button){
-  borrar();
-  rta='FISH';//Cuando se carga el ejercicio se cargara esta rta, asi que esta  linea se debe borrar
-  var rtaUsuario2 = document.getElementById(button).alt;
-  var n =rtaUsuario2.localeCompare(rta);
-
-  if( n != 0 ){
-    musicplay("soundincorrecto");
-    document.getElementById("incorrecto").innerHTML='Try again';
-    document.getElementById("b11").style.border="outset red";
-    document.getElementById(button).style.border="outset red";
-    document.getElementById("img11").disabled=true;
-  }else{
-      musicplay("soundcorrecto");
-      document.getElementById("correcto").innerHTML='Very Good!';
-      document.getElementById("b11").style.border="outset green";
-      document.getElementById(button).style.border="outset green";
-  //    window.setTimeout("alert('Siguiente Item')",2000);
-      }
-  }
 
 function validacionNivelDos(button){
   borrar();
@@ -978,71 +931,6 @@ function siguienteItem(){
 
 }
 
-
-function siguienteitemN0(){
-
- //var resultado = {nivel, categ, item, descrip, pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , correcta, frase, frasecompleta};
-
-
-	switch (resultado) {
-	  case 0:
-
-        document.getElementById('b01').textContent= 'FISH';
-        document.getElementById('b01').value= 'FISH';
-        document.getElementById('b02').textContent='DOG';
-        document.getElementById('b02').value= 'DOG';
-        document.getElementById('b03').textContent= 'CAT';
-        document.getElementById('b03').value= 'CAT';
-
-        document.getElementById("img01").src="img/gato.jpg";
-
-        document.getElementById("s01").src= "sonidos/fish.mp3";
-        document.getElementById("s02").src= "sonidos/dog.mp3";
-        document.getElementById("s03").src= "sonidos/cat.mp3";
-        rta = 'CAT';
-        resultado++;
-        rehacerNivelCero();
-	    break;
-    case 1:
-      document.getElementById('b01').textContent= 'CAT';
-      document.getElementById('b01').value= 'CAT';
-      document.getElementById('b02').textContent='DOG';
-      document.getElementById('b02').value= 'DOG';
-      document.getElementById('b03').textContent= 'HORSE';
-      document.getElementById('b03').value= 'HORSE';
-
-      document.getElementById("img01").src="img/perro.jpg";
-
-      document.getElementById("s01").src= "sonidos/cat.mp3";
-      document.getElementById("s02").src= "sonidos/dog.mp3";
-      document.getElementById("s03").src= "sonidos/horse.mp3";
-      rta = 'DOG';
-      resultado++;
-      rehacerNivelCero();
-    break;
-    case 2:
-      document.getElementById('b03').textContent= 'CAT';
-      document.getElementById('b03').value= 'CAT';
-      document.getElementById('b02').textContent='FISH';
-      document.getElementById('b02').value= 'FISH';
-      document.getElementById('b01').textContent= 'HORSE';
-      document.getElementById('b01').value= 'HORSE';
-
-      document.getElementById("img01").src="img/pez.jpg";
-
-      document.getElementById("s01").src= "sonidos/horse.mp3";
-      document.getElementById("s02").src= "sonidos/fish.mp3";
-      document.getElementById("s03").src= "sonidos/cat.mp3";
-
-            document.getElementById('bsgte0').textContent= ' ';
-      rta = 'FISH';
-      resultado++;
-      rehacerNivelCero();
-
-	  default:
-  }
-
-}
 
 function backg(){
 
