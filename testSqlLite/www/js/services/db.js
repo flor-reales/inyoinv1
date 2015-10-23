@@ -83,8 +83,8 @@ angular.module("starter.services", [])
    var flagCheck = 0;
 
 
-   $scope.cargarNivelCero = function(nivel) {
-
+   $scope.cargarNivelCero = function() {
+     nivel = getNivel();
      categ = getCategoria();
      cantItemsCateg = getCantItems(categ);
      Users.select(nivel, categ, contadorNivelCero).then(function(users)
@@ -111,7 +111,7 @@ angular.module("starter.services", [])
             }else{
               //mostrar finalizacion de categ
               borrar();
-              document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+              mostrar('finCategoria','nivel0');
               contadorNivelCero = 1;
             }
    })
@@ -119,8 +119,8 @@ angular.module("starter.services", [])
 //nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta
 	};
 
-  $scope.cargarNivelUno = function(nivel) {
-
+  $scope.cargarNivelUno = function() {
+      nivel = getNivel();
       categ = getCategoria();
       cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelUno).then(function(users)
@@ -151,14 +151,14 @@ angular.module("starter.services", [])
 
         }else{
           borrar();
-          document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+          mostrar('finCategoria','nivel1');
           contadorNivelUno = 1;
         }
     })
   };
 
-  $scope.cargarNivelDos = function(nivel) {
-
+  $scope.cargarNivelDos = function() {
+      nivel = getNivel();
       categ = getCategoria();
       cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelDos).then(function(users)
@@ -193,14 +193,14 @@ angular.module("starter.services", [])
 
         }else{
           borrar();
-          document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+          mostrar('finCategoria','nivel2');
           contadorNivelDos = 1;
         }
     })
   };
 
-  $scope.cargarNivelTres = function(nivel) {
-
+  $scope.cargarNivelTres = function() {
+      nivel = getNivel();
       categ = getCategoria();
       cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelTres).then(function(users)
@@ -236,22 +236,22 @@ angular.module("starter.services", [])
          */
        }else{
          borrar();
-         document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+         mostrar('finCategoria','nivel3');
          contadorNivelTres = 1;
        }
 
     })
   };
 
-  $scope.cargarNivelCuatro = function(nivel) {
-
+  $scope.cargarNivelCuatro = function() {
+      nivel = getNivel();
       categ = getCategoria();
       cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelCuatro).then(function(users)
       {
          $scope.datos = users;
 
-          if(contadorNivelCuatro <= cantItemsCateg) { 
+          if(contadorNivelCuatro <= cantItemsCateg) {
             contadorNivelCuatro++;
             rehacerNivelCuatro();
 
@@ -280,7 +280,7 @@ angular.module("starter.services", [])
 
        }else{
          borrar();
-         document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+         mostrar('finCategoria','nivel4');
          contadorNivelCuatro = 1;
        }
 
@@ -378,7 +378,7 @@ $scope.validacionNivelTres= function(button){
                     document.getElementById(button).style.display="block";
                     document.getElementById("rtaoculta31").style.display = "none";
                     document.getElementById("bbi31").style.border="dashed black";
-           },1400);
+           },200);
     }else{
           document.getElementById("brtaelegida31").style.border= "outset blue";
           document.getElementById("img32").style.border="outset magenta";
@@ -408,7 +408,7 @@ $scope.validacionNivelTres= function(button){
                           document.getElementById(button).style.display="block";
                           document.getElementById("rtaoculta32").style.display = "none";
                           document.getElementById("bbi32").style.border="dashed black";
-                 },1400);
+                 },200);
           }else{
                 document.getElementById("brtaelegida32").style.border= "outset magenta";
                 document.getElementById("img33").style.border="outset OrangeRed";
