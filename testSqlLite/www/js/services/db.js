@@ -81,165 +81,209 @@ angular.module("starter.services", [])
    var contadorNivelTres = 1;
    var contadorNivelCuatro = 1;
    var flagCheck = 0;
-   $scope.cargarNivelCero = function(nivel, categ) {
 
+
+   $scope.cargarNivelCero = function(nivel) {
+
+     categ = getCategoria();
+     cantItemsCateg = getCantItems(categ);
      Users.select(nivel, categ, contadorNivelCero).then(function(users)
      {
           $scope.datos = users;
-          contadorNivelCero++;
 
-        rehacerNivelCero();
-		    document.getElementById('b01').textContent= $scope.datos[0].resp1;
-        document.getElementById('b01').value= $scope.datos[0].resp1;
-        document.getElementById('b02').textContent=$scope.datos[0].resp2;
-        document.getElementById('b02').value= $scope.datos[0].resp2;
-        document.getElementById('b03').textContent= $scope.datos[0].resp3;
-        document.getElementById('b03').value= $scope.datos[0].resp3;
+          if(contadorNivelCero <= cantItemsCateg) {
+            contadorNivelCero++;
+            rehacerNivelCero();
+		          document.getElementById('b01').textContent= $scope.datos[0].resp1;
+              document.getElementById('b01').value= $scope.datos[0].resp1;
+              document.getElementById('b02').textContent=$scope.datos[0].resp2;
+              document.getElementById('b02').value= $scope.datos[0].resp2;
+              document.getElementById('b03').textContent= $scope.datos[0].resp3;
+              document.getElementById('b03').value= $scope.datos[0].resp3;
 
-        document.getElementById("img01").src=$scope.datos[0].pathImagen1;
+              document.getElementById("img01").src=$scope.datos[0].pathImagen1;
 
-        document.getElementById("s01").src= $scope.datos[0].pathR1;
-        document.getElementById("s02").src= $scope.datos[0].pathR2;
-        document.getElementById("s03").src= $scope.datos[0].pathR3;
+              document.getElementById("s01").src= $scope.datos[0].pathR1;
+              document.getElementById("s02").src= $scope.datos[0].pathR2;
+              document.getElementById("s03").src= $scope.datos[0].pathR3;
 
-        rtaNivelCero = $scope.datos[0].desc;
+              rtaNivelCero = $scope.datos[0].desc;
+            }else{
+              //mostrar finalizacion de categ
+              borrar();
+              document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+              contadorNivelCero = 1;
+            }
    })
 
 //nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta
 	};
 
-  $scope.cargarNivelUno = function(nivel, categ ) {
+  $scope.cargarNivelUno = function(nivel) {
 
+      categ = getCategoria();
+      cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelUno).then(function(users)
       {
          $scope.datos = users;
-         contadorNivelUno++;
 
-         rehacerNivelUno();
-         document.getElementById('b11').textContent= $scope.datos[0].desc;
-         document.getElementById('b11').value= $scope.datos[0].desc;
+        if(contadorNivelUno <= cantItemsCateg) {
+            contadorNivelUno++;
+            rehacerNivelUno();
+            document.getElementById('b11').textContent= $scope.datos[0].desc;
+            document.getElementById('b11').value= $scope.datos[0].desc;
 
+            document.getElementById("s11").src= $scope.datos[0].frasecompleta;
 
-         document.getElementById("s11").src= $scope.datos[0].frasecompleta;
+            document.getElementById("img11").alt=$scope.datos[0].resp1;
+            document.getElementById("img12").alt=$scope.datos[0].resp2;
+            document.getElementById("img13").alt=$scope.datos[0].resp3;
 
-         document.getElementById("img11").alt=$scope.datos[0].resp1;
-         document.getElementById("img12").alt=$scope.datos[0].resp2;
-         document.getElementById("img13").alt=$scope.datos[0].resp3;
+            document.getElementById("img11").src=$scope.datos[0].pathImagen1;
+            document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+            document.getElementById("img13").src=$scope.datos[0].pathImagen3;
 
+            document.getElementById("s12").src= $scope.datos[0].pathR1;
+            document.getElementById("s13").src= $scope.datos[0].pathR2;
+            document.getElementById("s14").src= $scope.datos[0].pathR3;
 
-         document.getElementById("img11").src=$scope.datos[0].pathImagen1;
-         document.getElementById("img12").src=$scope.datos[0].pathImagen2;
-         document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+            rtaNivelUno = $scope.datos[0].desc;
 
-         document.getElementById("s12").src= $scope.datos[0].pathR1;
-         document.getElementById("s13").src= $scope.datos[0].pathR2;
-         document.getElementById("s14").src= $scope.datos[0].pathR3;
-
-         rtaNivelUno = $scope.datos[0].desc;
+        }else{
+          borrar();
+          document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+          contadorNivelUno = 1;
+        }
     })
   };
 
-  $scope.cargarNivelDos = function(nivel, categ ) {
+  $scope.cargarNivelDos = function(nivel) {
 
+      categ = getCategoria();
+      cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelDos).then(function(users)
       {
-         $scope.datos = users;
-         contadorNivelDos++;
-
-         rehacerNivelDos();
-         document.getElementById('b21').textContent= $scope.datos[0].resp1;
-         document.getElementById('b21').value= $scope.datos[0].resp1;
-
-         document.getElementById('b22').textContent= $scope.datos[0].resp2;
-         document.getElementById('b22').value= $scope.datos[0].resp2;
-
-         document.getElementById('b23').textContent= $scope.datos[0].resp3;
-         document.getElementById('b23').value= $scope.datos[0].resp3;
 
 
-         document.getElementById("img21").alt=$scope.datos[0].resp1;
-         document.getElementById("img21").src=$scope.datos[0].pathImagen1;
+        if(contadorNivelDos <= cantItemsCateg) {
+          $scope.datos = users;
+          contadorNivelDos++;
 
+          rehacerNivelDos();
+          document.getElementById('b21').textContent= $scope.datos[0].resp1;
+          document.getElementById('b21').value= $scope.datos[0].resp1;
 
+          document.getElementById('b22').textContent= $scope.datos[0].resp2;
+          document.getElementById('b22').value= $scope.datos[0].resp2;
 
-         document.getElementById("img12").src=$scope.datos[0].pathImagen2;
-         document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+          document.getElementById('b23').textContent= $scope.datos[0].resp3;
+          document.getElementById('b23').value= $scope.datos[0].resp3;
+
+          document.getElementById("img21").alt=$scope.datos[0].resp1;
+          document.getElementById("img21").src=$scope.datos[0].pathImagen1;
+
+          document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+          document.getElementById("img13").src=$scope.datos[0].pathImagen3;
 
 /*         document.getElementById("s12").src= $scope.datos[0].pathR1;
          document.getElementById("s13").src= $scope.datos[0].pathR2;
          document.getElementById("s14").src= $scope.datos[0].pathR3;
 */
-         rtaIncorrectaNivelDos = $scope.datos[0].frase;
+          rtaIncorrectaNivelDos = $scope.datos[0].frase;
+
+        }else{
+          borrar();
+          document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+          contadorNivelDos = 1;
+        }
     })
   };
 
-  $scope.cargarNivelTres = function(nivel, categ ) {
+  $scope.cargarNivelTres = function(nivel) {
 
+      categ = getCategoria();
+      cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelTres).then(function(users)
       {
          $scope.datos = users;
-         contadorNivelTres++;
-         flagCheck = 0;
 
-         rehacerNivelTres();
-         document.getElementById('b31').textContent= $scope.datos[0].resp1;
-         document.getElementById('b31').value= $scope.datos[0].resp1;
+      if(contadorNivelTres <= cantItemsCateg) {
+          contadorNivelTres++;
+          flagCheck = 0;
 
-         document.getElementById('b32').textContent= $scope.datos[0].resp2;
-         document.getElementById('b32').value= $scope.datos[0].resp2;
+          rehacerNivelTres();
+          document.getElementById('b31').textContent= $scope.datos[0].resp1;
+          document.getElementById('b31').value= $scope.datos[0].resp1;
 
-         document.getElementById('b33').textContent= $scope.datos[0].resp3;
-         document.getElementById('b33').value= $scope.datos[0].resp3;
+          document.getElementById('b32').textContent= $scope.datos[0].resp2;
+          document.getElementById('b32').value= $scope.datos[0].resp2;
 
+          document.getElementById('b33').textContent= $scope.datos[0].resp3;
+          document.getElementById('b33').value= $scope.datos[0].resp3;
 
-         document.getElementById("img31").alt=$scope.datos[0].resp1;
-         document.getElementById("img31").src=$scope.datos[0].pathImagen1;
+          document.getElementById("img31").alt=$scope.datos[0].resp1;
+          document.getElementById("img31").src=$scope.datos[0].pathImagen1;
 
-         document.getElementById("img32").alt=$scope.datos[0].resp2;
-         document.getElementById("img32").src=$scope.datos[0].pathImagen2;
+          document.getElementById("img32").alt=$scope.datos[0].resp2;
+          document.getElementById("img32").src=$scope.datos[0].pathImagen2;
 
-         document.getElementById("img33").alt=$scope.datos[0].resp3;
-         document.getElementById("img33").src=$scope.datos[0].pathImagen3;
+          document.getElementById("img33").alt=$scope.datos[0].resp3;
+          document.getElementById("img33").src=$scope.datos[0].pathImagen3;
 
          /*document.getElementById("s12").src= $scope.datos[0].pathR1;
          document.getElementById("s13").src= $scope.datos[0].pathR2;
          document.getElementById("s14").src= $scope.datos[0].pathR3;
-*/
+         */
+       }else{
+         borrar();
+         document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+         contadorNivelTres = 1;
+       }
+
     })
   };
 
-  $scope.cargarNivelCuatro = function(nivel, categ ) {
+  $scope.cargarNivelCuatro = function(nivel) {
 
+      categ = getCategoria();
+      cantItemsCateg = getCantItems(categ);
       Users.select(nivel, categ, contadorNivelCuatro).then(function(users)
       {
          $scope.datos = users;
-         contadorNivelCuatro++;
 
-         rehacerNivelCuatro();
+          if(contadorNivelCuatro <= cantItemsCateg) { 
+            contadorNivelCuatro++;
+            rehacerNivelCuatro();
 
-         fraseCorrecta =  $scope.datos[0].frasecompleta;
-         fraseIncompleta =  $scope.datos[0].frase;
-         document.getElementById("frase").innerHTML=$scope.datos[0].frase;
+            fraseCorrecta =  $scope.datos[0].frasecompleta;
+            fraseIncompleta =  $scope.datos[0].frase;
+            document.getElementById("frase").innerHTML=$scope.datos[0].frase;
 
-         document.getElementById('b41').textContent= $scope.datos[0].resp1;
-         document.getElementById('b41').value= $scope.datos[0].resp1;
+            document.getElementById('b41').textContent= $scope.datos[0].resp1;
+            document.getElementById('b41').value= $scope.datos[0].resp1;
 
-         document.getElementById('b42').textContent= $scope.datos[0].resp2;
-         document.getElementById('b42').value= $scope.datos[0].resp2;
+            document.getElementById('b42').textContent= $scope.datos[0].resp2;
+            document.getElementById('b42').value= $scope.datos[0].resp2;
 
-         document.getElementById('b43').textContent= $scope.datos[0].resp3;
-         document.getElementById('b43').value= $scope.datos[0].resp3;
+            document.getElementById('b43').textContent= $scope.datos[0].resp3;
+            document.getElementById('b43').value= $scope.datos[0].resp3;
 
+            document.getElementById("img41").alt=$scope.datos[0].desc;
+            document.getElementById("img41").src=$scope.datos[0].pathImagen1;
 
-         document.getElementById("img41").alt=$scope.datos[0].descríp;
-         document.getElementById("img41").src=$scope.datos[0].pathImagen1;
-
-         rtaNivelCuatro = $scope.datos[0].descríp;
+            rtaNivelCuatro = $scope.datos[0].desc;
 
          /*document.getElementById("s12").src= $scope.datos[0].pathR1;
          document.getElementById("s13").src= $scope.datos[0].pathR2;
          document.getElementById("s14").src= $scope.datos[0].pathR3;
-*/
+         */
+
+       }else{
+         borrar();
+         document.getElementById("incorrecto").innerHTML='FIN CATEGORIA';
+         contadorNivelCuatro = 1;
+       }
+
     })
   };
 
@@ -393,10 +437,6 @@ $scope.validacionNivelTres= function(button){
 
 
 };
-
-
-
-
 
   $scope.validacionNivelCuatro= function(button){
     borrar();
