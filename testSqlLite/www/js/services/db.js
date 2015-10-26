@@ -1,5 +1,17 @@
 angular.module("starter.services", [])
 
+.controller('LoadingCtrl', function($scope, $ionicLoading) {
+  $scope.hide = function(){
+    $ionicLoading.hide();
+  };
+  $scope.show = function() {
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+    window.setTimeout(function(){mostrar('principal','inicio');$scope.hide();},8000);
+  };
+})
+
 .factory('DBA', function($cordovaSQLite, $q, $ionicPlatform) {
   var self = this;
 
