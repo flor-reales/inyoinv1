@@ -44,24 +44,24 @@
 #bderecha  {position: absolute; top:580px; left:290px;}
 
 #bnivelUno {width: 100% ; padding: 0.5em 0; text-align:center;position:absolute; top:150px}
-#brta1 {position: absolute; top:420px; left:60px; }
-#brta2 {position: absolute; top:420px; left:160px;}
+#brta1 {position: absolute; top:420px; left:20px; }
+#brta2 {position: absolute; top:420px; left:140px;}
 #brta3 {position: absolute; top:420px; left:260px;}
 
 #bplaycenter { width: 100% ; padding: 0.5em 0; text-align:center;position:absolute; top:200px}
-#bplay1 {position: absolute; top:480px; left:70px}
-#bplay2 {position: absolute; top:480px; left:170px}
+#bplay1 {position: absolute; top:480px; left:30px}
+#bplay2 {position: absolute; top:480px; left:150px}
 #bplay3 {position: absolute; top:480px; left:270px}
 
-#imgleft {position: absolute; top:180px; left:60px}
-#imgcenter {position: absolute; top:180px; left:160px}
+#imgleft {position: absolute; top:180px; left:20px}
+#imgcenter {position: absolute; top:180px; left:140px}
 #imgright {position: absolute; top:180px; left:260px}
 
 #imgcenterunique {width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:120px}
 
-#imgaprender {width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:150px}
-#baprender {width: 100% ;text-align:center; position: absolute; top:350px}
-#bplayaprender {width: 100% ;text-align:center; position: absolute; top:400px}
+#imgaprender {width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:100px}
+#baprender {width: 100% ;text-align:center; position: absolute; top:360px}
+#bplayaprender {width: 100% ;text-align:center; position: absolute; top:410px}
 #bsgte {width: 100% ;text-align:right; position: absolute; top:250px}
 
 #frase {color:black; font-size:180%; font-weight: bold;width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:370px;}
@@ -157,15 +157,20 @@
 		<!-- eleccion nivel- aprender IU-002 -->
   	<div id="aprender" style= "visibility:hidden">
 		    <div id="lecciones">
-			      <button class="button button-full button-assertive" onclick="mostrar('catalogo0','aprender');fondoLibro()"> BEGINNER </button>
+			      <button class="button button-full button-assertive" ng-click="cargarProgresoAprender()" onclick="mostrar('catalogo0','aprender');fondoLibro();setNivelCategoria(0,1)">
+               BEGINNER </button>
 
-			      <button  class="button button-full button-energized" onclick="mostrar('catalogo0','aprender');fondoLibro()" >  PRE-INTERMEDIATE </button>
+			      <button  class="button button-full button-energized" ng-click="cargarProgresoAprender()" onclick="mostrar('catalogo0','aprender');fondoLibro();setNivelCategoria(1,1)">
+                PRE-INTERMEDIATE </button>
 
-			      <button  class="button button-full button-balanced" onclick="mostrar('catalogo0','aprender');fondoLibro()" >  INTERMEDIATE </button>
+			      <button  class="button button-full button-balanced" ng-click="cargarProgresoAprender()" onclick="mostrar('catalogo0','aprender');fondoLibro();setNivelCategoria(2,1)">
+                INTERMEDIATE </button>
 
-		        <button  class="button button-full button-positive" onclick="mostrar('catalogo0','aprender');fondoLibro()" > UPPER INTERMEDIATE</button>
+		        <button  class="button button-full button-positive" ng-click="cargarProgresoAprender()" onclick="mostrar('catalogo0','aprender');fondoLibro();setNivelCategoria(3,1)">
+               UPPER INTERMEDIATE</button>
 
-		        <button class="button button-full button-royal" onclick="mostrar('catalogo0','aprender');fondoLibro()" >  ADVANCED </button>
+		        <button class="button button-full button-royal" ng-click="cargarProgresoAprender()" onclick="mostrar('catalogo0','aprender');fondoLibro();setNivelCategoria(4,1)">
+                ADVANCED </button>
 		    </div>
 
         <div id="bizq">
@@ -207,26 +212,26 @@
 	    <div id="categorias">
 
 
-		  <button  class="button button-full button-assertive"  ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,1)" >
+		  <button  class="button button-full button-assertive"  ng-click="cargarProgreso(0,1)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,1)" >
          NUMBERS  <img src="img\numeros.png" width="35px" height="35px"></button>
 
-      <button  class="button button-full button-energized" ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,2)" >
+      <button  class="button button-full button-energized" ng-click="cargarProgreso(0,2)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,2)" >
          COLOURS
               <img  src="img\colores.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,3)" >
+				<button  class="button button-full button-balanced" ng-click="cargarProgreso(0,3)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,3)" >
             ANIMALS
               <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-positive"  ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,4)" >
+				<button  class="button button-full button-positive"  ng-click="cargarProgreso(0,4)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,4)" >
           TOYS
             <img  src="img\juguetes.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-royal" ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,5)">
+				<button  class="button button-full button-royal" ng-click="cargarProgreso(0,5)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,5)">
            BODY
             <img  src="img\cuerpo.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-dark" ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,6)" >
+				<button  class="button button-full button-dark" ng-click="cargarProgreso(0,6)" onclick="mostrar('nivel0','categoria0');setNivelCategoria(0,6)" >
             GREETINGS
             <img  src="img\saludos.png" width="35px" height="35px"></button>
 			</div>-->
@@ -246,25 +251,25 @@
 		<!-- eleccion categoria de nivel 1 IU-003 -->
 		<div id="categoria1" style= "visibility:hidden">
 		    <div id="categorias">
-				<button class="button button-full button-assertive" ng-click="cargarNivelUno()" onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,1)" >
+				<button class="button button-full button-assertive" ng-click="cargarProgreso(1,1)" onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,1)" >
           ANIMALS <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-energized" ng-click="cargarNivelUno()"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,2)" >
+				<button class="button button-full button-energized" ng-click="cargarProgreso(1,2)"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,2)" >
           FRUITS <img src="img\frutas.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" ng-click="cargarNivelUno()"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,3)" >
+				<button  class="button button-full button-balanced" ng-click="cargarProgreso(1,3)"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,3)" >
            FURNITURE
             <img  src="img\mueble.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" ng-click="cargarNivelUno()"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,4)" >
+				<button class="button button-full button-positive" ng-click="cargarProgreso(1,4)"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,4)" >
             BODY
             <img  src="img\cuerpo.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-royal" ng-click="cargarNivelUno()"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,5)" >
+				<button class="button button-full button-royal" ng-click="cargarProgreso(1,5)"  onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,5)" >
            CLOTHES
             <img  src="img\ropa.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-stable" ng-click="cargarNivelUno()" onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,6)" >
+				<button class="button button-full button-stable" ng-click="cargarProgreso(1,6)" onclick="mostrar('nivel1','categoria1');setNivelCategoria(1,6)" >
            PLACES
             <img src="img\casa.png" width="35px" height="35px"></button>
 
@@ -284,31 +289,31 @@
 		<!-- eleccion categoria de nivel 2 IU-003 -->
 		<div id="categoria2" style= "visibility:hidden">
 	    <div id="categorias">
-				<button  class="button button-full button-assertive" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,1)" >
+				<button  class="button button-full button-assertive" ng-click="cargarProgreso(2,1)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,1)" >
           COLOURS
                     <img  src="img\colores.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,2)" >
+				<button  class="button button-full button-energized" ng-click="cargarProgreso(2,2)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,2)" >
             ANIMALS
                     <img  src="img\animales.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-balanced" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,3)" >
+				<button class="button button-full button-balanced" ng-click="cargarProgreso(2,3)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,3)" >
            VEGETABLES
                     <img  src="img\verduras.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,4)" >
+				<button class="button button-full button-positive" ng-click="cargarProgreso(2,4)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,4)" >
            CLOTHES
                     <img  src="img\ropa.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-royal" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,5)" >
+				<button class="button button-full button-royal" ng-click="cargarProgreso(2,5)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,5)" >
            BODY
                     <img src="img\cuerpo.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-dark" ng-click="cargarNivelDos()" onclick="mostrar('nivel2','categoria2');setNivelCategoria(2,6)" >
+				<button class="button button-full button-dark" ng-click="cargarProgreso(2,6)" onclick="mostrar('nivel2','categoria2');setNivelCategoria(2,6)" >
            FRUITS
                     <img  src="img\frutas.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-stable" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,7)" >
+				<button class="button button-full button-stable" ng-click="cargarProgreso(2,7)" onclick="mostrar('nivel3','categoria2');setNivelCategoria(2,7)" >
            PLACES
                     <img  src="img\lugares.png" width="55px" height="35px">  </button>
       </div>
@@ -328,31 +333,31 @@
 		<!-- eleccion categoria de nivel 3 IU-003 -->
 		<div id="categoria3" style= "visibility:hidden">
 		  <div id="categorias">
-				<button  class="button button-full button-assertive" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,1)" >
+				<button  class="button button-full button-assertive" ng-click="cargarProgreso(3,1)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,1)" >
             ADJECTIVES
             <img  src="img\adjetivos.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,2)" >
+				<button  class="button button-full button-energized" ng-click="cargarProgreso(3,2)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,2)" >
            DAYS
             <img  src="img\dias.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-balanced" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,3)" >
+				<button  class="button button-full button-balanced" ng-click="cargarProgreso(3,3)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,3)" >
             NUMBERS
             <img  src="img\numeros.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,4)" >
+				<button class="button button-full button-positive" ng-click="cargarProgreso(3,4)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,4)" >
             TRANSPORT
             <img  src="img\transporte.png" width="55px" height="35px"></button>
 
-				<button class="button button-full button-royal" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,5)" >
+				<button class="button button-full button-royal" ng-click="cargarProgreso(3,5)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,5)" >
             GREETINGS
             <img  src="img\saludos.png" width="45px" height="35px"></button>
 
-				<button class="button button-full button-stable" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,6)" >
+				<button class="button button-full button-stable" ng-click="cargarProgreso(3,6)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,6)" >
            VERBS
             <img  src="img\verbos.png" width="45px" height="35px"></button>
 
-				<button class="button button-full button-dark" ng-click="cargarNivelTres()" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,7)" >
+				<button class="button button-full button-dark" ng-click="cargarProgreso(3,7)" onclick="mostrar('nivel3','categoria3');setNivelCategoria(3,7)" >
             PERSON
             <img  src="img\persona.png" width="35px" height="35px"></button>
 			</div>
@@ -372,19 +377,24 @@
 		<!-- eleccion categoria de nivel 4 IU-003 -->
 		<div id="categoria4" style= "visibility:hidden">
       <div id="categorias">
-				<button  class="button button-full button-assertive" ng-click="cargarNivelCero()" onclick="mostrar('nivel0','categoria4');setNivelCategoria(4,1)" >  SEASONS
+				<button  class="button button-full button-assertive" ng-click="cargarProgreso(4,1)" onclick="mostrar('nivel0','categoria4');setNivelCategoria(4,1)" >
+            SEASONS
               <img  src="img\estaciones.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" onclick="mostrar('nivel4','categoria4')" >  MONTHS
+				<button  class="button button-full button-energized" ng-click="cargarProgreso(4,2)" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,2)" >
+           MONTHS
               <img  src="img\meses.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-balanced" onclick="mostrar('nivel4','categoria4')" >  QUESTIONS
+				<button class="button button-full button-balanced" ng-click="cargarProgreso(4,3)" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,3)" >
+            QUESTIONS
               <img  src="img\preguntas.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-positive" ng-click="cargarNivelCuatro()" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,4)" >  ADVERBS
+				<button class="button button-full button-positive" ng-click="cargarProgreso(4,4)" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,4)" >
+            ADVERBS
               <img  src="img\adverbios.png" width="35px" height="35px"></button>
 
-				<button class="button button-full button-royal" ng-click="cargarNivelCuatro()" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,5)" >  HOUR
+				<button class="button button-full button-royal" ng-click="cargarProgreso(4,5)" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,5)" >
+            HOUR
               <img  src="img\hora.png" width="35px" height="35px"></button>
 
 	    </div>
@@ -438,13 +448,13 @@
 			</div>
 
       <div id="bizq">
-        <button  onclick="mostrarNivelCero()"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarNivelCero()" style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
 
 
       <div id="bderecha">
-        <button  onclick="mostrarborrar('principal','nivel0')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('principal','nivel0')"style="border:transparent 1px solid;background:transparent">
       <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -483,12 +493,12 @@
 			</div>
 
       <div id="bizq">
-        <button  onclick="mostrarborrar('categoria1','nivel1')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('categoria1','nivel1')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
 
       <div id="bderecha">
-          <button  onclick="mostrarborrar('principal','nivel1')"style="border:transparent 1px solid;background:transparent; ">
+          <button ng-click="guardarProgreso()" onclick="mostrarborrar('principal','nivel1')"style="border:transparent 1px solid;background:transparent">
           <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -519,12 +529,12 @@
 			</div>
 
       <div id="bizq">
-        <button  onclick="mostrarborrar('categoria2','nivel2')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('categoria2','nivel2')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
 
       <div id="bderecha">
-        <button  onclick="mostrarborrar('principal','nivel2')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('principal','nivel2')"style="border:transparent 1px solid;background:transparent">
       <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -580,12 +590,12 @@
 			</div>
 
       <div id="bizq">
-        <button  onclick="mostrarNivelTres()"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarNivelTres()"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
 
       <div id="bderecha">
-          <button  onclick="mostrarborrar('principal','nivel3')"style="border:transparent 1px solid;background:transparent; ">
+          <button ng-click="guardarProgreso()" onclick="mostrarborrar('principal','nivel3')"style="border:transparent 1px solid;background:transparent">
           <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -617,12 +627,12 @@
 			</div>
 
       <div id="bizq">
-        <button  onclick="mostrarborrar('categoria4','nivel4')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('categoria4','nivel4')"style="border:transparent 1px solid;background:transparent; ">
       <img src="img\menu.png" width="45px" height="45px"></button>
       </div>
 
       <div id="bderecha">
-        <button  onclick="mostrarborrar('principal','nivel4')"style="border:transparent 1px solid;background:transparent; ">
+        <button ng-click="guardarProgreso()" onclick="mostrarborrar('principal','nivel4')"style="border:transparent 1px solid;background:transparent">
       <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -631,13 +641,13 @@
 		<!-- catalogo nivel 0-->
 		<div id="catalogo0" style= "visibility:hidden">
 
-	    <div id="imgaprender"> <img id=imgap src="img\0301.jpg" width="150px"></div>
+	    <div id="imgaprender"> <img id=imgap src="img\0301.jpg" width="180px"></div>
 
 			<div id="baprender">
 				<button id=bapIngles class="button  button-assertive" >   HORSE  </button>
 			</div>
 
-			<div id="bsgte" onclick="siguienteItem()">
+			<div id="bsgte" ng-click="cargarAprender()">
 				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
 			</div>
 
@@ -646,9 +656,13 @@
           <img src="img\play.png" width="50px" height="50px"> </button>
 			</div>
 
+      <div id="bizq">
+        <button ng-click="guardarProgresoAprender()" onclick="mostrarborrar('aprender','catalogo0');fondoCielo()"style="border:transparent 1px solid;background:transparent">
+      <img src="img\menu.png" width="45px" height="45px"></button>
+      </div>
 
       <div id="bderecha">
-          <button  onclick="mostrar('principal','catalogo0');fondoCielo()"style="border:transparent 1px solid;background:transparent; ">
+          <button  ng-click="guardarProgresoAprender()" onclick="mostrar('principal','catalogo0');fondoCielo()"style="border:transparent 1px solid;background:transparent">
         <img src="img\home.png" width="45px" height="45px"></button>
       </div>
 
@@ -750,8 +764,6 @@
     }
 
     var silencio = 0;
-    var rta = new String;
-        rta='HORSE';
     var flagCheck = 0; //Se inicializara en cero cada vez que se cargue un item del nivel 4
     var nivel;
     var categoria;
@@ -888,6 +900,10 @@ function silenciar(){
       document.getElementById('p03').disabled = 'disabled';
       document.getElementById('p11').disabled = 'disabled';
       document.getElementById('paprender').disabled = 'disabled';
+      //Cambiar onclick de imagenes del nivel 1
+      document.getElementById('img11').onclick = function(){this.onclick = ''};
+      document.getElementById("img12").onclick = function(){this.onclick = ''};
+      document.getElementById("img13").onclick = function(){this.onclick = ''};
       //Borro src de sonidos correcto e incorrecto para que no se reproduzcan
       document.getElementById("soundcorrecto").src=" ";
       document.getElementById("soundincorrecto").src=" ";
@@ -905,20 +921,16 @@ function silenciar(){
       //Activo sonidos de correcto e incorrecto
       document.getElementById("soundcorrecto").src="sonidos/correcto.mp3";
       document.getElementById("soundincorrecto").src="sonidos/incorrecto.mp3";
+      //Hbailito sonidos nivel 1
+      document.getElementById('img11').onclick = function(){reproducirNivelUno('s12'); this.onclick = ''};
+      document.getElementById("img12").onclick = function(){reproducirNivelUno('s13'); this.onclick = ''};
+      document.getElementById("img13").onclick = function(){reproducirNivelUno('s14'); this.onclick = ''};
       //Cambio imagen del boton silenciar
       document.getElementById("imgsilenciar").src="img/soundon.png";
       alert("NOW YOU CAN LISTEN THE SOUNDS");
       silencio = 0;
     }
   }
-
-function siguienteItem(){
-
-  document.getElementById('bapIngles').textContent='CAT';
-  document.getElementById("imgap").src="img/gato.jpg";
-  document.getElementById("audioAprender").src="sonidos/cat.mp3";
-
-}
 
 function backg(){
 
@@ -981,9 +993,9 @@ function rehacerNivelCero(){
 function rehacerNivelUno(){
   borrar();
   //Habilita todas las imagenes
-  document.getElementById('img11').onclick = function(){validacionNivelUno('img11');reproducirNivelUno('s12'); this.onclick = ''};
-  document.getElementById("img12").onclick = function(){validacionNivelUno('img12');reproducirNivelUno('s13'); this.onclick = ''};
-  document.getElementById("img13").onclick = function(){validacionNivelUno('img13');reproducirNivelUno('s14'); this.onclick = ''};
+  document.getElementById('img11').onclick = function(){reproducirNivelUno('s12'); this.onclick = ''};
+  document.getElementById("img12").onclick = function(){reproducirNivelUno('s13'); this.onclick = ''};
+  document.getElementById("img13").onclick = function(){reproducirNivelUno('s14'); this.onclick = ''};
   //Saca borde rojo o verde
   document.getElementById("img11").style.border="outset transparent";
   document.getElementById("img12").style.border="outset transparent";

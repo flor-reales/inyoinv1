@@ -29,7 +29,6 @@ $ionicPlatform.ready(function()
    $cordovaSQLite.execute(db,"DROP TABLE items");
 
    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (id integer primary key,  nivel integer, categ integer, item integer, desc text, pathImagen1 text, pathImagen2 text, pathImagen3 text, resp1 text, pathR1 text, resp2 text, pathR2 text, resp3 text, pathR3 text, frase text, frasecompleta text)");
-
    //Nivel 0 (en frasecompleta se encuentra el sonido de la opcion correcta)
    //Categoria 1
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,1,1, 'ONE', 'img/0101.jpg','','','TEN','sonidos/0110.mp3','THREE','sonidos/0103.mp3','ONE','sonidos/0101.mp3', ' ','sonidos/0101.mp3')");
@@ -51,9 +50,9 @@ $ionicPlatform.ready(function()
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,2,5, 'RED',    'img/0205.jpg','','','RED','sonidos/0205.mp3','BLUE','sonidos/0202.mp3','WHITE','sonidos/0203.mp3',' ','sonidos/0205.mp3')");
 
    //Categoria 3
-     $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,1, 'HORSE',  'img/0301.jpg','','','DOG','sonidos/0304.mp3','HORSE','sonidos/0301.mp3','CAT','sonidos/0303.mp3', ' ','sonidos/0301.mp3')");
+   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,1, 'HORSE',  'img/0301.jpg','','','DOG','sonidos/0304.mp3','HORSE','sonidos/0301.mp3','CAT','sonidos/0303.mp3', ' ','sonidos/0301.mp3')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,2, 'RABBIT', 'img/0302.jpg','','','TURTLE','sonidos/0305.mp3','RABBIT','sonidos/0302.mp3','DUCK','sonidos/0306.mp3',' ','sonidos/0302.mp3')");
-   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,3, 'CAT',    'img/0303.jpg','','','PIG','sonidos/0307.mp3','HORSE','sonidos/0302.mp3','DUCK','sonidos/0306.mp3',' ','sonidos/0303.mp3')");
+   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,3, 'CAT',    'img/0303.jpg','','','PIG','sonidos/0307.mp3','HORSE','sonidos/0302.mp3','CAT','sonidos/0303.mp3',' ','sonidos/0303.mp3')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,4, 'DOG',    'img/0304.jpg','','','DOG','sonidos/0301.mp3','CAT','sonidos/0303.mp3','TURTLE','sonidos/0305.mp3',' ','sonidos/0304.mp3')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,5, 'TURTLE', 'img/0305.jpg','','','HORSE','sonidos/0301.mp3','DUCK','sonidos/0306.mp3','TURTLE','sonidos/0305.mp3',' ','sonidos/0305.mp3')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (0,3,6, 'DUCK',   'img/0306.jpg','','','DUCK','sonidos/0306.mp3','CAT','sonidos/0303.mp3','RABBIT','sonidos/0302.mp3',' ','sonidos/0306.mp3')");
@@ -144,7 +143,7 @@ $ionicPlatform.ready(function()
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (2,3,3, '',  'img/2307.jpg','img/2308.jpg','img/2309.jpg','EGGPLANT','sonidos/2307.mp3','CUCUMBER','sonidos/2308.mp3','BROCCOLI','sonidos/2309.mp3',' ',' ')");
 
    //Categoria 4
-   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (2,4,1, '',  'img/2401.jpg','img/2402.jpg','img/2403.jpg','SCARF','sonidos/2401.mp3','JACKET','SHIRT','sonidos/2402.mp3','sonidos/2403.mp3', ' ',' ')");
+   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (2,4,1, '',  'img/2401.jpg','img/2402.jpg','img/2403.jpg','SCARF','sonidos/2401.mp3','SHIRT','sonidos/2402.mp3','JACKET','sonidos/2403.mp3', ' ',' ')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (2,4,2, '',  'img/2404.jpg','img/2405.jpg','img/2406.jpg','GLOVES','sonidos/2404.mp3','HAT','sonidos/2405.mp3','SNEAKER','sonidos/2406.mp3',' ',' ')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (2,4,3, '',  'img/2407.jpg','img/2408.jpg','img/2409.jpg','DRESS','sonidos/2407.mp3','SWEATSHIRT','sonidos/2408.mp3','SOCKS','sonidos/2409.mp3',' ',' ')");
 
@@ -201,10 +200,10 @@ $ionicPlatform.ready(function()
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,6,1, '',  'img/3601.jpg','img/3602.jpg','img/3603.jpg','DANCE','sonidos/3601.mp3','SING','sonidos/3602.mp3','EAT','sonidos/3603.mp3', ' ',' ')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,6,2, '',  'img/3604.jpg','img/3605.jpg','img/3606.jpg','RUN','sonidos/3604.mp3','SLEEP','sonidos/3605.mp3','LIKE','sonidos/3606.mp3',' ',' ')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,6,3, '',  'img/3607.jpg','img/3608.jpg','img/3609.jpg','DO','sonidos/3607.mp3','PLAY','sonidos/3608.mp3','GET UP','sonidos/3609.mp3',' ',' ')");
-   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,6,4, '',  'img/3610.jpg','img/3611.jpg','img/3612.jpg','LOOK','sonidos/3610.mp3','LIVE','SIT','sonidos/3611.mp3','sonidos/3612.mp3',' ',' ')");
+   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,6,4, '',  'img/3610.jpg','img/3611.jpg','img/3612.jpg','LOOK','sonidos/3610.mp3','SIT','sonidos/3611.mp3','LIVE','sonidos/3612.mp3',' ',' ')");
 
    //Categoria 7
-   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,7,1, '',  'img/3701.jpg','img/3702.jpg','img/3703.jpg','I','sonidos/3701.mp3','YOU','sonidos/3702.mp3','HE','sonidos/3703.mp3','YOU','sonidos/3702.mp3', ' ',' ')");
+   $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,7,1, '',  'img/3701.jpg','img/3702.jpg','img/3703.jpg','I','sonidos/3701.mp3','YOU','sonidos/3702.mp3','HE','sonidos/3703.mp3', ' ',' ')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (3,7,2, '',  'img/3704.jpg','img/3705.jpg','img/3706.jpg','SHE','sonidos/3704.mp3','WE','sonidos/3705.mp3','THEY','sonidos/3706.mp3',' ',' ')");
 
   //Nivel 4  ()
@@ -223,7 +222,6 @@ $ionicPlatform.ready(function()
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (4,4,5, 'IN',   'img/4405.jpg','','','DOWN','sonidos/4402.mp3','IN','sonidos/4405.mp3','ON','sonidos/4403.mp3',' ','')");
    $cordovaSQLite.execute(db, "INSERT INTO items (nivel, categ, item, desc , pathImagen1, pathImagen2, pathImagen3, resp1 , pathR1 , resp2, pathR2 , resp3 , pathR3 , frase, frasecompleta) VALUES (4,4,6, 'OUT',  'img/4406.jpg','','','UNDER','sonidos/4404.mp3','UP','sonidos/4401.mp3','OUT','sonidos/4406.mp3',' ','')");
 
- 
  });
 })
 

@@ -1,0 +1,4 @@
+C:\Users\Claudia\Documents\GitHub\inyoinv1\testSqlLite\platforms\android\build\intermediates\classes\debug
+C:\Users\Claudia\Documents\GitHub\inyoinv1\testSqlLite\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector-cad7dd3ef0a1ca3b46405eaa7de63c42350003af.jar
+C:\Users\Claudia\Documents\GitHub\inyoinv1\testSqlLite\platforms\android\build\intermediates\pre-dexed\debug\classes-1888d9833d77f9f9ad024f987ecd9e248aeadfb0.jar
+C:\Users\Claudia\Documents\GitHub\inyoinv1\testSqlLite\platforms\android\build\intermediates\pre-dexed\debug\sqlite-native-driver-ff35391aed009b39ca034898941da93d0956413f.jar
