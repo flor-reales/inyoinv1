@@ -280,14 +280,14 @@ angular.module("starter.services", [])
           flagCheck = 0;
 
           rehacerNivelTres();
-          document.getElementById('b31').textContent= $scope.datos[0].resp1;
-          document.getElementById('b31').value= $scope.datos[0].resp1;
+          document.getElementById('b33').textContent= $scope.datos[0].resp1;
+          document.getElementById('b33').value= $scope.datos[0].resp1;
 
           document.getElementById('b32').textContent= $scope.datos[0].resp2;
           document.getElementById('b32').value= $scope.datos[0].resp2;
 
-          document.getElementById('b33').textContent= $scope.datos[0].resp3;
-          document.getElementById('b33').value= $scope.datos[0].resp3;
+          document.getElementById('b31').textContent= $scope.datos[0].resp3;
+          document.getElementById('b31').value= $scope.datos[0].resp3;
 
           document.getElementById("img31").alt=$scope.datos[0].resp1;
           document.getElementById("img31").src=$scope.datos[0].pathImagen1;
@@ -603,6 +603,7 @@ angular.module("starter.services", [])
                     if(contadorAprender[i]<16){
                       document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
                     }else{
+
                       document.getElementById("audioAprender").src = $scope.datos[numeroItem].pathImagen2;
                     }
                       break;
