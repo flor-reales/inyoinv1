@@ -101,6 +101,7 @@ angular.module("starter.services", [])
    var progresoNivelCuatro = [1,1,1,1,1,1];
    var contadorAprender = [0,0,0,0,0];
    var progresoAprender = [0,0,0,0,0];
+   var fraseIncompleta;
 
 
    $scope.guardarProgresoAprender = function() {
@@ -310,6 +311,22 @@ angular.module("starter.services", [])
     })
   };
 
+  $scope.rehacerNivelCuatro =function (){
+    borrar();
+    //Habilita todos los botones
+    document.getElementById("b41").disabled=false;
+    document.getElementById("b42").disabled=false;
+    document.getElementById("b43").disabled=false;
+    //Saca borde rojo o verde
+    document.getElementById("b41").style.border="outset transparent";
+    document.getElementById("b42").style.border="outset transparent";
+    document.getElementById("b43").style.border="outset transparent";
+    document.getElementById("img41").style.border="outset transparent";
+
+    document.getElementById("frase").innerHTML=fraseIncompleta;
+
+};
+
   $scope.cargarNivelCuatro = function() {
       nivel = getNivel();
       categ = getCategoria();
@@ -320,7 +337,7 @@ angular.module("starter.services", [])
 
           if(contadorNivelCuatro <= cantItemsCateg) {
             contadorNivelCuatro++;
-            rehacerNivelCuatro();
+            $scope.rehacerNivelCuatro();
 
             fraseCorrecta =  $scope.datos[0].frasecompleta;
             fraseIncompleta =  $scope.datos[0].frase;
@@ -387,7 +404,7 @@ angular.module("starter.services", [])
      document.getElementById("incorrecto").innerHTML='Try again';
      document.getElementById("b11").style.border="outset red";
      document.getElementById(button).style.border="outset red";
-     document.getElementById("img11").disabled=true;
+
    }else{
        musicplay("soundcorrecto");
        document.getElementById("correcto").innerHTML='Very Good!';
@@ -561,12 +578,45 @@ angular.module("starter.services", [])
 
        Users.all(i).then(function(users)
        {
+
+        $scope.datos = users;
+        if(contadorAprender[i] < $scope.datos.length) {
             numeroItem =  contadorAprender[i];
-            $scope.datos = users;
+
             document.getElementById('bapIngles').textContent = $scope.datos[numeroItem].desc;
-            document.getElementById("imgap").src = $scope.datos[numeroItem].pathImagen1;
-            document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
+            switch (i) {
+              case 0:
+                    document.getElementById("imgap").src = $scope.datos[numeroItem].pathImagen1;
+                    document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
+                break;
+              case 2:
+                    if((contadorAprender[i]>=44)&&(contadorAprender[i]<=49)){
+                            document.getElementById("imgap").src = $scope.datos[numeroItem].pathImagen1;
+                            document.getElementById("audioAprender").src = $scope.datos[numeroItem].pathImagen2;
+                    }else{
+                            document.getElementById("imgap").src = $scope.datos[numeroItem].frase;
+                            document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
+                    }
+                    break;
+                case 4:
+                      document.getElementById("imgap").src = $scope.datos[numeroItem].pathImagen1;
+                    if(contadorAprender[i]<16){
+                      document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
+                    }else{
+                      document.getElementById("audioAprender").src = $scope.datos[numeroItem].pathImagen2;
+                    }
+                      break;
+              default:
+                      document.getElementById("imgap").src = $scope.datos[numeroItem].frase;
+                      document.getElementById("audioAprender").src = $scope.datos[numeroItem].frasecompleta;
+                    }
+
             contadorAprender[i]++;
+          }else{
+                fondoCielo();
+                mostrar('aprender','catalogo0');
+                contadorAprender[i] = 0;
+           }
       })
 
   };
