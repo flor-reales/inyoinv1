@@ -40,8 +40,8 @@
 #ajustestext  { width: 100% ; padding: 0.5em 0; text-align:center }
 #pie  { width: 100%; clear: both; padding: 0.5em 0}
 
-#bizq  {position:absolute; top:580px; left:40px;}
-#bderecha  {position: absolute; top:580px; left:290px;}
+#bizq  {position:absolute; top:560px; left:40px;}
+#bderecha  {position: absolute; top:560px; left:290px;}
 
 #bstart {width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:400px}
 #imginicio {width: 100% ; padding: 0.5em 0; text-align:center}
@@ -50,6 +50,7 @@
 #brta1 {position: absolute; top:420px; left:20px; }
 #brta2 {position: absolute; top:420px; left:140px;}
 #brta3 {position: absolute; top:420px; left:260px;}
+#brtn2 {position: absolute; top:420px; left:240px;}
 
 #brtan01 {position: absolute; top:420px; left:20px;}
 #brtan02 {width: 100% ;text-align:center; position: absolute; top:420px}
@@ -75,6 +76,7 @@
 #baprender {width: 100% ;text-align:center; position: absolute; top:360px}
 #bplayaprender {width: 100% ;text-align:center; position: absolute; top:410px}
 #bsgte {width: 100% ;text-align:right; position: absolute; top:250px}
+#bsgte3 {width: 100% ;text-align:right; position: absolute; top:360px}
 
 #frase {color:black; font-size:180%; font-weight: bold;width: 100% ; padding: 0.5em 0; text-align:center; position: absolute; top:370px;}
 
@@ -408,7 +410,7 @@
             SEASONS
               <img  src="img\estaciones.png" width="35px" height="35px"></button>
 
-				<button  class="button button-full button-energized" ng-click="cargarProgreso(4,2)" onclick="mostrar('nivel4','categoria4');setNivelCategoria(4,2)" >
+				<button  class="button button-full button-energized" ng-click="cargarProgreso(4,2)" onclick="mostrar('nivel0','categoria4');setNivelCategoria(4,2)" >
            MONTHS
               <img  src="img\meses.png" width="35px" height="35px"></button>
 
@@ -447,13 +449,13 @@
 
 		  <div id="imgcenterunique"><img id="img01" width="150px" height="150 px"></div>
 
-      <div id="brtan01">
+      <div id="brta1">
 			<button id=b01 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelCero('b01')" value="DOG">   DOG  </button>
 		  </div>
-		  <div id="brtan02">
+		  <div id="brta2">
 			<button id=b02 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelCero('b02')" value="HORSE">  HORSE </button>
 		  </div>
-		  <div id="brtan03">
+		  <div id="brta3">
 			<button id=b03 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelCero('b03')" value="CAT">  CAT   </button>
 		  </div>
 
@@ -503,15 +505,15 @@
       <button id="b11" class="button  button-energized" style="border: 3px solid transparent;" > FISH </button>
       </div>
 
-      <div id="imgrta1"><img id="img11" width="120px" height="120px" style="border:transparent 1px solid;"
+      <div id="brta1"><img id="img11" width="120px" height="120px" style="border:transparent 1px solid;"
             ng-click="validacionNivelUno('img11')" onclick="reproducirNivelUno('s12');this.onclick = '' " alt="BEE">
       </div>
 
-      <div id="imgrta2"><img id="img12" width="120px" height="120px" style="border:transparent 1px solid;"
+      <div id="brta2"><img id="img12" width="120px" height="120px" style="border:transparent 1px solid;"
             ng-click="validacionNivelUno('img12')"  onclick="reproducirNivelUno('s13'); this.onclick = ''" alt="SPIDER">
       </div>
 
-      <div id="imgrta3"><img id="img13"  width="120px" height="120px" style="border:transparent 1px solid;"
+      <div id="brta3"><img id="img13"  width="120px" height="120px" style="border:transparent 1px solid;"
             ng-click="validacionNivelUno('img13')" onclick="reproducirNivelUno('s14'); this.onclick = ''" alt="FISH">
       </div>
 
@@ -547,7 +549,7 @@
 		  <div id="brta2">
 			<button id=b22 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelDos('b22')" value="YELLOW">  YELLOW </button>
 		  </div>
-		  <div id="brta3">
+		  <div id="brtan2">
 			<button id=b23 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelDos('b23')" value="LEMON" >  LEMON  </button>
 		  </div>
 
@@ -612,8 +614,8 @@
       <button id=b33 class="button  button-energized" style="font-size:92%" ng-click="validacionNivelTres('b33')" value="CAT">  CAT   </button>
       </div>
 
-      <div id="bsgte">
-				<button ng-click="cargarNivelTres()" style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+      <div id="bsgte3">
+				<button ng-click="cargarNivelTres()" style="background:transparent;border:transparent 1px solid;font-size:240%;font-weight: bold;"> >  </button>
 			</div>
 
       <div id="bizq">
@@ -668,14 +670,14 @@
 		<!-- catalogo nivel 0-->
 		<div id="catalogo0" style= "visibility:hidden">
 
-	    <div id="imgaprender"> <img id=imgap src="img\0301.jpg" width="180px" height="160px"></div>
+	    <div id="imgaprender"> <img id=imgap width="180px" height="160px"></div>
 
 			<div id="baprender">
-				<button id=bapIngles class="button  button-assertive" >   HORSE  </button>
+				<button id=bapIngles class="button  button-assertive" >   </button>
 			</div>
 
 			<div id="bsgte" ng-click="cargarAprender()">
-				<button style="background:transparent;border:transparent 1px solid;font-size:240%; font-weight: bold;"> >  </button>
+				<button style="background:transparent;border:transparent 1px solid;font-size:240%;color:blue; font-weight: bold;"> >>  </button>
 			</div>
 
 			<div id="bplayaprender">
@@ -860,10 +862,17 @@ function getCantItems(categ) {
         }
       break;
     default:
-      if(categ ==1){
-        return 4;
-      }else{
-        return 6;
+    switch (categ) {
+      case 1:
+      return 4;
+      case 2:
+      return 12;
+      case 3:
+      return 6;
+      case 4:
+      return 6;
+      case 5:
+      return 4;
       }
   }
 
