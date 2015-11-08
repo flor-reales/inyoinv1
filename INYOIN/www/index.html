@@ -1076,6 +1076,47 @@ function rehacerNivelDos(){
 
 }
 
+function random1(){
+	return Math.floor((Math.random() * 3) + 1);
+}
+
+function random2(anterior){
+var actual=Math.floor((Math.random() * 3) + 1);
+	while(actual == anterior){
+		actual=Math.floor((Math.random() * 3) + 1);
+	}
+	return actual;
+}
+
+function random3(primero,segundo){
+	switch (primero) {
+    case 1:
+      switch (segundo) {
+        case 2:
+        return 3;
+        case 3:
+        return 2;
+        }
+      break;
+    case 2:
+      switch (segundo) {
+        case 1:
+        return 3;
+        case 3:
+        return 1;
+        }
+      break;
+    case 3:
+      switch (segundo) {
+        case 1:
+        return 2;
+        case 2:
+        return 1;
+        }
+      break;
+  }
+}
+
     </script>
 	</ion-pane>
 </body>
