@@ -166,7 +166,7 @@ angular.module("starter.services", [])
             rehacerNivelCero();
               //Desactivo boton siguiente item
               document.getElementById("bsgte0").textContent=" ";
-              
+
 			  posicion1=random1();
 			  posicion2=random2(posicion1);
 		      posicion3=random3(posicion1,posicion2);
@@ -178,7 +178,7 @@ angular.module("starter.services", [])
 							document.getElementById('b01').textContent= $scope.datos[0].resp1;
 							document.getElementById('b01').value= $scope.datos[0].resp1;
 							document.getElementById("s01").src= $scope.datos[0].pathR1;
-							
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp2;
 							document.getElementById('b02').value= $scope.datos[0].resp2;
 							document.getElementById("s02").src= $scope.datos[0].pathR2;
@@ -186,30 +186,30 @@ angular.module("starter.services", [])
 							document.getElementById('b03').value= $scope.datos[0].resp3;
 							document.getElementById("s03").src= $scope.datos[0].pathR3;
 						}
-						break;	
+						break;
 						case 3: {
 							document.getElementById('b01').textContent= $scope.datos[0].resp1;
 							document.getElementById('b01').value= $scope.datos[0].resp1;
 							document.getElementById("s01").src= $scope.datos[0].pathR1;
-							
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp3;
 							document.getElementById('b02').value= $scope.datos[0].resp3;
 							document.getElementById("s02").src= $scope.datos[0].pathR3;
 							document.getElementById('b03').textContent= $scope.datos[0].resp2;
 							document.getElementById('b03').value= $scope.datos[0].resp2;
 							document.getElementById("s03").src= $scope.datos[0].pathR2;
-							
+
 						}
 						break;
 					}
-					break; 
-					case 2:	
+					break;
+					case 2:
 					  switch (posicion2) {
 						case 1:{
 							document.getElementById('b01').textContent= $scope.datos[0].resp2;
 							document.getElementById('b01').value= $scope.datos[0].resp2;
-							document.getElementById("s01").src= $scope.datos[0].pathR2;	
-							
+							document.getElementById("s01").src= $scope.datos[0].pathR2;
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp1;
 							document.getElementById('b02').value= $scope.datos[0].resp1;
 							document.getElementById("s02").src= $scope.datos[0].pathR1;
@@ -221,8 +221,8 @@ angular.module("starter.services", [])
 						case 3:{
 							document.getElementById('b01').textContent= $scope.datos[0].resp2;
 							document.getElementById('b01').value= $scope.datos[0].resp2;
-							document.getElementById("s01").src= $scope.datos[0].pathR2;	
-							
+							document.getElementById("s01").src= $scope.datos[0].pathR2;
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp3;
 							document.getElementById('b02').value= $scope.datos[0].resp3;
 							document.getElementById("s02").src= $scope.datos[0].pathR3;
@@ -234,27 +234,27 @@ angular.module("starter.services", [])
 
 					}
 					break;
-					case 3: 
-					  
-					  switch (posicion2) {	
+					case 3:
+
+					  switch (posicion2) {
 						case 1:{
 							document.getElementById('b01').textContent= $scope.datos[0].resp3;
 							document.getElementById('b01').value= $scope.datos[0].resp3;
 							document.getElementById("s01").src= $scope.datos[0].pathR3;
-							
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp1;
 							document.getElementById('b02').value= $scope.datos[0].resp1;
 							document.getElementById("s02").src= $scope.datos[0].pathR1;
 							document.getElementById('b03').textContent= $scope.datos[0].resp2;
 							document.getElementById('b03').value= $scope.datos[0].resp2;
 							document.getElementById("s03").src= $scope.datos[0].pathR2;
-						} 
-						break;	
+						}
+						break;
 						case 2:{
 							document.getElementById('b01').textContent= $scope.datos[0].resp3;
 							document.getElementById('b01').value= $scope.datos[0].resp3;
 							document.getElementById("s01").src= $scope.datos[0].pathR3;
-							
+
 							document.getElementById('b02').textContent=$scope.datos[0].resp2;
 							document.getElementById('b02').value= $scope.datos[0].resp2;
 							document.getElementById("s02").src= $scope.datos[0].pathR2;
@@ -266,10 +266,10 @@ angular.module("starter.services", [])
 						}
 					break;
 				}
-			
+
               //Carga de la imagen
               document.getElementById("img01").src=$scope.datos[0].pathImagen1;
-              
+
               //Carga de respuesta Correcta para validar luego
               rtaNivelCero = $scope.datos[0].desc;
             }else{
@@ -294,11 +294,11 @@ angular.module("starter.services", [])
             rehacerNivelUno();
             //Desactivo boton siguiente item
             document.getElementById("bsgte1").textContent=" ";
-            
+
 			posicion1=random1();
 			posicion2=random2(posicion1);
 			posicion3=random3(posicion1,posicion2);
-			
+
 			switch (posicion1) {
 				case 1:
 				  switch (posicion2) {
@@ -306,44 +306,44 @@ angular.module("starter.services", [])
 						document.getElementById("img11").alt=$scope.datos[0].resp1;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s12").src= $scope.datos[0].pathR1;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp2;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s13").src= $scope.datos[0].pathR2;
-			
+
 						document.getElementById("img13").alt=$scope.datos[0].resp3;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s14").src= $scope.datos[0].pathR3;
 					}
-					break;	
+					break;
 					case 3: {
 						document.getElementById("img11").alt=$scope.datos[0].resp1;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s12").src= $scope.datos[0].pathR1;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp3;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s13").src= $scope.datos[0].pathR3;
-			
+
 						document.getElementById("img13").alt=$scope.datos[0].resp2;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s14").src= $scope.datos[0].pathR2;
-						
+
 					}
 					break;
 				}
-				break; 
-				case 2:	
+				break;
+				case 2:
 				  switch (posicion2) {
 					case 1:{
 						document.getElementById("img11").alt=$scope.datos[0].resp2;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s12").src= $scope.datos[0].pathR2;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp1;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s13").src= $scope.datos[0].pathR1;
-			
+
 						document.getElementById("img13").alt=$scope.datos[0].resp3;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s14").src= $scope.datos[0].pathR3;
@@ -353,11 +353,11 @@ angular.module("starter.services", [])
 						document.getElementById("img11").alt=$scope.datos[0].resp2;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s12").src= $scope.datos[0].pathR2;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp3;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s13").src= $scope.datos[0].pathR3;
-			
+
 						document.getElementById("img13").alt=$scope.datos[0].resp1;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s14").src= $scope.datos[0].pathR1;
@@ -366,32 +366,32 @@ angular.module("starter.services", [])
 
 				}
 				break;
-				case 3: 
-				  
-				  switch (posicion2) {	
+				case 3:
+
+				  switch (posicion2) {
 					case 1:{
 						document.getElementById("img11").alt=$scope.datos[0].resp3;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s12").src= $scope.datos[0].pathR3;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp1;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s13").src= $scope.datos[0].pathR1;
-			
+
 						document.getElementById("img13").alt=$scope.datos[0].resp2;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s14").src= $scope.datos[0].pathR2;
-					} 
-					break;	
+					}
+					break;
 					case 2:{
 						document.getElementById("img11").alt=$scope.datos[0].resp3;
 						document.getElementById("img11").src=$scope.datos[0].pathImagen3;
 						document.getElementById("s12").src= $scope.datos[0].pathR3;
-           
+
 						document.getElementById("img12").alt=$scope.datos[0].resp2;
 						document.getElementById("img12").src=$scope.datos[0].pathImagen2;
 						document.getElementById("s13").src= $scope.datos[0].pathR2;
-						
+
 						document.getElementById("img13").alt=$scope.datos[0].resp1;
 						document.getElementById("img13").src=$scope.datos[0].pathImagen1;
 						document.getElementById("s14").src= $scope.datos[0].pathR1;
@@ -400,7 +400,7 @@ angular.module("starter.services", [])
 					}
 				break;
 			}
-			
+
 			//Carga del boton
             document.getElementById('b11').textContent= $scope.datos[0].desc;
             document.getElementById('b11').value= $scope.datos[0].desc;
@@ -432,11 +432,11 @@ angular.module("starter.services", [])
           rehacerNivelDos();
           //Desactivo boton siguiente item
           document.getElementById("bsgte2").textContent=" ";
-		  	  
+
 		  	posicion1=random1();
 			posicion2=random2(posicion1);
 			posicion3=random3(posicion1,posicion2);
-			
+
 			switch (posicion1) {
 				case 1:
 				  switch (posicion2) {
@@ -444,7 +444,7 @@ angular.module("starter.services", [])
 						document.getElementById('b21').textContent= $scope.datos[0].resp1;
 						document.getElementById('b21').value= $scope.datos[0].resp1;
 						document.getElementById("s21").src= $scope.datos[0].pathR1;
-						
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp2;
 						document.getElementById('b22').value= $scope.datos[0].resp2;
 						document.getElementById("s22").src= $scope.datos[0].pathR2;
@@ -452,30 +452,30 @@ angular.module("starter.services", [])
 						document.getElementById('b23').value= $scope.datos[0].resp3;
 						document.getElementById("s23").src= $scope.datos[0].pathR3;
 					}
-					break;	
+					break;
 					case 3: {
 						document.getElementById('b21').textContent= $scope.datos[0].resp1;
 						document.getElementById('b21').value= $scope.datos[0].resp1;
 						document.getElementById("s21").src= $scope.datos[0].pathR1;
-						
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp3;
 						document.getElementById('b22').value= $scope.datos[0].resp3;
 						document.getElementById("s22").src= $scope.datos[0].pathR3;
 						document.getElementById('b23').textContent= $scope.datos[0].resp2;
 						document.getElementById('b23').value= $scope.datos[0].resp2;
 						document.getElementById("s23").src= $scope.datos[0].pathR2;
-						
+
 					}
 					break;
 				}
-				break; 
-				case 2:	
+				break;
+				case 2:
 				  switch (posicion2) {
 					case 1:{
 						document.getElementById('b21').textContent= $scope.datos[0].resp2;
 						document.getElementById('b21').value= $scope.datos[0].resp2;
-						document.getElementById("s21").src= $scope.datos[0].pathR2;	
-						
+						document.getElementById("s21").src= $scope.datos[0].pathR2;
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp1;
 						document.getElementById('b22').value= $scope.datos[0].resp1;
 						document.getElementById("s22").src= $scope.datos[0].pathR1;
@@ -487,8 +487,8 @@ angular.module("starter.services", [])
 					case 3:{
 						document.getElementById('b21').textContent= $scope.datos[0].resp2;
 						document.getElementById('b21').value= $scope.datos[0].resp2;
-						document.getElementById("s21").src= $scope.datos[0].pathR2;	
-						
+						document.getElementById("s21").src= $scope.datos[0].pathR2;
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp3;
 						document.getElementById('b22').value= $scope.datos[0].resp3;
 						document.getElementById("s22").src= $scope.datos[0].pathR3;
@@ -500,27 +500,27 @@ angular.module("starter.services", [])
 
 				}
 				break;
-				case 3: 
-				  
-				  switch (posicion2) {	
+				case 3:
+
+				  switch (posicion2) {
 					case 1:{
 						document.getElementById('b21').textContent= $scope.datos[0].resp3;
 						document.getElementById('b21').value= $scope.datos[0].resp3;
 						document.getElementById("s21").src= $scope.datos[0].pathR3;
-						
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp1;
 						document.getElementById('b22').value= $scope.datos[0].resp1;
 						document.getElementById("s22").src= $scope.datos[0].pathR1;
 						document.getElementById('b23').textContent= $scope.datos[0].resp2;
 						document.getElementById('b23').value= $scope.datos[0].resp2;
 						document.getElementById("s23").src= $scope.datos[0].pathR2;
-					} 
-					break;	
+					}
+					break;
 					case 2:{
 						document.getElementById('b21').textContent= $scope.datos[0].resp3;
 						document.getElementById('b21').value= $scope.datos[0].resp3;
 						document.getElementById("s21").src= $scope.datos[0].pathR3;
-						
+
 						document.getElementById('b22').textContent=$scope.datos[0].resp2;
 						document.getElementById('b22').value= $scope.datos[0].resp2;
 						document.getElementById("s22").src= $scope.datos[0].pathR2;
@@ -536,7 +536,7 @@ angular.module("starter.services", [])
 		 //Carga de la imagen
           document.getElementById("img21").alt=$scope.datos[0].resp1;
           document.getElementById("img21").src=$scope.datos[0].pathImagen1;
-          
+
 		  //Carga de respuesta INOCRRECTA para luego validar
           rtaIncorrectaNivelDos = $scope.datos[0].frase;
 
@@ -593,12 +593,12 @@ angular.module("starter.services", [])
                       $scope.rehacerNivelTres();
                       //Desactivo boton siguiente item
                       document.getElementById("bsgte3").textContent=" ";
-					  
+
 						posicion1=random1();
 						posicion2=random2(posicion1);
 						posicion3=random3(posicion1,posicion2);
 
-						
+
 						switch (posicion1) {
 							case 1:
 							  switch (posicion2) {
@@ -606,7 +606,7 @@ angular.module("starter.services", [])
 									  document.getElementById('b31').textContent= $scope.datos[0].resp1;
 									  document.getElementById('b31').value= $scope.datos[0].resp1;
 									  document.getElementById("s31").src= $scope.datos[0].pathR1;
-           
+
 									  document.getElementById('b32').textContent= $scope.datos[0].resp2;
 									  document.getElementById('b32').value= $scope.datos[0].resp2;
 								      document.getElementById("s32").src= $scope.datos[0].pathR2;
@@ -615,7 +615,7 @@ angular.module("starter.services", [])
 									  document.getElementById('b33').value= $scope.datos[0].resp3;
 							          document.getElementById("s33").src= $scope.datos[0].pathR3;
 								}
-								break;	
+								break;
 								case 3: {
 									  document.getElementById('b31').textContent= $scope.datos[0].resp1;
 									  document.getElementById('b31').value= $scope.datos[0].resp1;
@@ -624,15 +624,15 @@ angular.module("starter.services", [])
 									  document.getElementById('b32').textContent= $scope.datos[0].resp3;
 									  document.getElementById('b32').value= $scope.datos[0].resp3;
 									  document.getElementById("s32").src= $scope.datos[0].pathR3;
-									  
+
 									  document.getElementById('b33').textContent= $scope.datos[0].resp2;
 									  document.getElementById('b33').value= $scope.datos[0].resp2;
 								      document.getElementById("s33").src= $scope.datos[0].pathR2;
 								}
 								break;
 							}
-							break; 
-							case 2:	
+							break;
+							case 2:
 							  switch (posicion2) {
 								case 1:{
 									  document.getElementById('b31').textContent= $scope.datos[0].resp2;
@@ -652,7 +652,7 @@ angular.module("starter.services", [])
 									  document.getElementById('b31').textContent= $scope.datos[0].resp2;
 									  document.getElementById('b31').value= $scope.datos[0].resp2;
 									  document.getElementById("s31").src= $scope.datos[0].pathR2;
-									  
+
 									  document.getElementById('b32').textContent= $scope.datos[0].resp3;
 									  document.getElementById('b32').value= $scope.datos[0].resp3;
 			                          document.getElementById("s32").src= $scope.datos[0].pathR3;
@@ -665,9 +665,9 @@ angular.module("starter.services", [])
 
 							}
 							break;
-							case 3: 
-							  
-							  switch (posicion2) {	
+							case 3:
+
+							  switch (posicion2) {
 								case 1:{
 									  document.getElementById('b31').textContent= $scope.datos[0].resp3;
 									  document.getElementById('b31').value= $scope.datos[0].resp3;
@@ -680,8 +680,8 @@ angular.module("starter.services", [])
 									  document.getElementById('b33').textContent= $scope.datos[0].resp2;
 									  document.getElementById('b33').value= $scope.datos[0].resp2;
 									  document.getElementById("s33").src= $scope.datos[0].pathR2;
-								} 
-								break;	
+								}
+								break;
 								case 2:{
 									  document.getElementById('b31').textContent= $scope.datos[0].resp3;
 									  document.getElementById('b31').value= $scope.datos[0].resp3;
@@ -699,7 +699,7 @@ angular.module("starter.services", [])
 								}
 							break;
 						}
-					  
+
                       //Carga de las 3 imagenes
                       document.getElementById("img31").alt=$scope.datos[0].resp1;
                       document.getElementById("img31").src=$scope.datos[0].pathImagen1;
@@ -748,11 +748,11 @@ angular.module("starter.services", [])
                     $scope.rehacerNivelCuatro();
                     //Desactivo boton siguiente item
                     document.getElementById("bsgte4").textContent=" ";
-					
+
 						posicion1=random1();
 						posicion2=random2(posicion1);
 						posicion3=random3(posicion1,posicion2);
-						
+
 						switch (posicion1) {
 							case 1:
 							  switch (posicion2) {
@@ -765,12 +765,12 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp2;
 									document.getElementById('b42').value= $scope.datos[0].resp2;
 									document.getElementById("s42").src= $scope.datos[0].pathR2;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp3;
 									document.getElementById('b43').value= $scope.datos[0].resp3;
 									document.getElementById("s43").src= $scope.datos[0].pathR3;
 								}
-								break;	
+								break;
 								case 3: {
 									//carga de botones respuesta
 									document.getElementById('b41').textContent= $scope.datos[0].resp1;
@@ -780,15 +780,15 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp3;
 									document.getElementById('b42').value= $scope.datos[0].resp3;
 									document.getElementById("s42").src= $scope.datos[0].pathR3;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp2;
 									document.getElementById('b43').value= $scope.datos[0].resp2;
 									document.getElementById("s43").src= $scope.datos[0].pathR2;
 								}
 								break;
 							}
-							break; 
-							case 2:	
+							break;
+							case 2:
 							  switch (posicion2) {
 								case 1:{
 									//carga de botones respuesta
@@ -799,7 +799,7 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp1;
 									document.getElementById('b42').value= $scope.datos[0].resp1;
 									document.getElementById("s42").src= $scope.datos[0].pathR1;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp3;
 									document.getElementById('b43').value= $scope.datos[0].resp3;
 									document.getElementById("s43").src= $scope.datos[0].pathR3;
@@ -814,7 +814,7 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp3;
 									document.getElementById('b42').value= $scope.datos[0].resp3;
 									document.getElementById("s42").src= $scope.datos[0].pathR3;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp1;
 									document.getElementById('b43').value= $scope.datos[0].resp1;
 									document.getElementById("s43").src= $scope.datos[0].pathR1;
@@ -823,9 +823,9 @@ angular.module("starter.services", [])
 
 							}
 							break;
-							case 3: 
-							  
-							  switch (posicion2) {	
+							case 3:
+
+							  switch (posicion2) {
 								case 1:{
 									//carga de botones respuesta
 									document.getElementById('b41').textContent= $scope.datos[0].resp3;
@@ -835,12 +835,12 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp1;
 									document.getElementById('b42').value= $scope.datos[0].resp1;
 									document.getElementById("s42").src= $scope.datos[0].pathR1;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp2;
 									document.getElementById('b43').value= $scope.datos[0].resp2;
 									document.getElementById("s43").src= $scope.datos[0].pathR2;
-								} 
-								break;	
+								}
+								break;
 								case 2:{
 									//carga de botones respuesta
 									document.getElementById('b41').textContent= $scope.datos[0].resp3;
@@ -850,7 +850,7 @@ angular.module("starter.services", [])
 									document.getElementById('b42').textContent= $scope.datos[0].resp2;
 									document.getElementById('b42').value= $scope.datos[0].resp2;
 									document.getElementById("s42").src= $scope.datos[0].pathR2;
-									
+
 									document.getElementById('b43').textContent= $scope.datos[0].resp1;
 									document.getElementById('b43').value= $scope.datos[0].resp1;
 									document.getElementById("s43").src= $scope.datos[0].pathR1;
@@ -859,7 +859,7 @@ angular.module("starter.services", [])
 								}
 							break;
 						}
-					
+
 					//Carga de frases a mostrar
                     fraseCorrecta =  $scope.datos[0].frasecompleta;
                     fraseIncompleta =  $scope.datos[0].frase;
@@ -1053,6 +1053,7 @@ angular.module("starter.services", [])
   $scope.cargarProgreso = function(n,c) {
     switch (n) {
     case 0:
+       document.getElementById("cabeceraNivel0").textContent='BEGGINER';
        contadorNivelCero = progresoNivelCero[c];
        $scope.cargarNivelCero();
        break;
@@ -1065,16 +1066,19 @@ angular.module("starter.services", [])
            contadorNivelDos = progresoNivelDos[c];
            $scope.cargarNivelDos();
         } else {
+           document.getElementById("cabeceraNivel3").textContent='INTERMEDIATE';
            contadorNivelTres = progresoNivelDos[c];
            $scope.cargarNivelTres();
         }
         break;
     case 3:
+        document.getElementById("cabeceraNivel3").textContent='UPPER INTERMEDIATE';
         contadorNivelTres = progresoNivelTres[c];
         $scope.cargarNivelTres();
         break;
     case 4:
         if (c <= 2) {
+           document.getElementById("cabeceraNivel0").textContent='ADVANCED';
            contadorNivelCero = progresoNivelCuatro[c];
            $scope.cargarNivelCero();
         } else {
