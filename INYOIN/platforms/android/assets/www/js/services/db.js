@@ -164,19 +164,113 @@ angular.module("starter.services", [])
           if(contadorNivelCero <= cantItemsCateg) {
             contadorNivelCero++;
             rehacerNivelCero();
-		          document.getElementById('b01').textContent= $scope.datos[0].resp1;
-              document.getElementById('b01').value= $scope.datos[0].resp1;
-              document.getElementById('b02').textContent=$scope.datos[0].resp2;
-              document.getElementById('b02').value= $scope.datos[0].resp2;
-              document.getElementById('b03').textContent= $scope.datos[0].resp3;
-              document.getElementById('b03').value= $scope.datos[0].resp3;
+              //Desactivo boton siguiente item
+              document.getElementById("bsgte0").textContent=" ";
 
+			  posicion1=random1();
+			  posicion2=random2(posicion1);
+		      posicion3=random3(posicion1,posicion2);
+
+				switch (posicion1) {
+					case 1:
+					  switch (posicion2) {
+						case 2: {
+							document.getElementById('b01').textContent= $scope.datos[0].resp1;
+							document.getElementById('b01').value= $scope.datos[0].resp1;
+							document.getElementById("s01").src= $scope.datos[0].pathR1;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp2;
+							document.getElementById('b02').value= $scope.datos[0].resp2;
+							document.getElementById("s02").src= $scope.datos[0].pathR2;
+							document.getElementById('b03').textContent= $scope.datos[0].resp3;
+							document.getElementById('b03').value= $scope.datos[0].resp3;
+							document.getElementById("s03").src= $scope.datos[0].pathR3;
+						}
+						break;
+						case 3: {
+							document.getElementById('b01').textContent= $scope.datos[0].resp1;
+							document.getElementById('b01').value= $scope.datos[0].resp1;
+							document.getElementById("s01").src= $scope.datos[0].pathR1;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp3;
+							document.getElementById('b02').value= $scope.datos[0].resp3;
+							document.getElementById("s02").src= $scope.datos[0].pathR3;
+							document.getElementById('b03').textContent= $scope.datos[0].resp2;
+							document.getElementById('b03').value= $scope.datos[0].resp2;
+							document.getElementById("s03").src= $scope.datos[0].pathR2;
+
+						}
+						break;
+					}
+					break;
+					case 2:
+					  switch (posicion2) {
+						case 1:{
+							document.getElementById('b01').textContent= $scope.datos[0].resp2;
+							document.getElementById('b01').value= $scope.datos[0].resp2;
+							document.getElementById("s01").src= $scope.datos[0].pathR2;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp1;
+							document.getElementById('b02').value= $scope.datos[0].resp1;
+							document.getElementById("s02").src= $scope.datos[0].pathR1;
+							document.getElementById('b03').textContent= $scope.datos[0].resp3;
+							document.getElementById('b03').value= $scope.datos[0].resp3;
+							document.getElementById("s03").src= $scope.datos[0].pathR3;
+						}
+						break;
+						case 3:{
+							document.getElementById('b01').textContent= $scope.datos[0].resp2;
+							document.getElementById('b01').value= $scope.datos[0].resp2;
+							document.getElementById("s01").src= $scope.datos[0].pathR2;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp3;
+							document.getElementById('b02').value= $scope.datos[0].resp3;
+							document.getElementById("s02").src= $scope.datos[0].pathR3;
+							document.getElementById('b03').textContent= $scope.datos[0].resp1;
+							document.getElementById('b03').value= $scope.datos[0].resp1;
+							document.getElementById("s03").src= $scope.datos[0].pathR1;
+						};
+						break;
+
+					}
+					break;
+					case 3:
+
+					  switch (posicion2) {
+						case 1:{
+							document.getElementById('b01').textContent= $scope.datos[0].resp3;
+							document.getElementById('b01').value= $scope.datos[0].resp3;
+							document.getElementById("s01").src= $scope.datos[0].pathR3;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp1;
+							document.getElementById('b02').value= $scope.datos[0].resp1;
+							document.getElementById("s02").src= $scope.datos[0].pathR1;
+							document.getElementById('b03').textContent= $scope.datos[0].resp2;
+							document.getElementById('b03').value= $scope.datos[0].resp2;
+							document.getElementById("s03").src= $scope.datos[0].pathR2;
+						}
+						break;
+						case 2:{
+							document.getElementById('b01').textContent= $scope.datos[0].resp3;
+							document.getElementById('b01').value= $scope.datos[0].resp3;
+							document.getElementById("s01").src= $scope.datos[0].pathR3;
+
+							document.getElementById('b02').textContent=$scope.datos[0].resp2;
+							document.getElementById('b02').value= $scope.datos[0].resp2;
+							document.getElementById("s02").src= $scope.datos[0].pathR2;
+							document.getElementById('b03').textContent= $scope.datos[0].resp1;
+							document.getElementById('b03').value= $scope.datos[0].resp1;
+							document.getElementById("s03").src= $scope.datos[0].pathR1;
+						}
+						break;
+						}
+					break;
+				}
+
+              //Carga de la imagen
               document.getElementById("img01").src=$scope.datos[0].pathImagen1;
 
-              document.getElementById("s01").src= $scope.datos[0].pathR1;
-              document.getElementById("s02").src= $scope.datos[0].pathR2;
-              document.getElementById("s03").src= $scope.datos[0].pathR3;
-
+              //Carga de respuesta Correcta para validar luego
               rtaNivelCero = $scope.datos[0].desc;
             }else{
               //mostrar finalizacion de categ
@@ -198,23 +292,122 @@ angular.module("starter.services", [])
         if(contadorNivelUno <= cantItemsCateg) {
             contadorNivelUno++;
             rehacerNivelUno();
+            //Desactivo boton siguiente item
+            document.getElementById("bsgte1").textContent=" ";
+
+			posicion1=random1();
+			posicion2=random2(posicion1);
+			posicion3=random3(posicion1,posicion2);
+
+			switch (posicion1) {
+				case 1:
+				  switch (posicion2) {
+					case 2: {
+						document.getElementById("img11").alt=$scope.datos[0].resp1;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s12").src= $scope.datos[0].pathR1;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp2;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s13").src= $scope.datos[0].pathR2;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp3;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s14").src= $scope.datos[0].pathR3;
+					}
+					break;
+					case 3: {
+						document.getElementById("img11").alt=$scope.datos[0].resp1;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s12").src= $scope.datos[0].pathR1;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp3;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s13").src= $scope.datos[0].pathR3;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp2;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s14").src= $scope.datos[0].pathR2;
+
+					}
+					break;
+				}
+				break;
+				case 2:
+				  switch (posicion2) {
+					case 1:{
+						document.getElementById("img11").alt=$scope.datos[0].resp2;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s12").src= $scope.datos[0].pathR2;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp1;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s13").src= $scope.datos[0].pathR1;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp3;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s14").src= $scope.datos[0].pathR3;
+					}
+					break;
+					case 3:{
+						document.getElementById("img11").alt=$scope.datos[0].resp2;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s12").src= $scope.datos[0].pathR2;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp3;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s13").src= $scope.datos[0].pathR3;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp1;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s14").src= $scope.datos[0].pathR1;
+					};
+					break;
+
+				}
+				break;
+				case 3:
+
+				  switch (posicion2) {
+					case 1:{
+						document.getElementById("img11").alt=$scope.datos[0].resp3;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s12").src= $scope.datos[0].pathR3;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp1;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s13").src= $scope.datos[0].pathR1;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp2;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s14").src= $scope.datos[0].pathR2;
+					}
+					break;
+					case 2:{
+						document.getElementById("img11").alt=$scope.datos[0].resp3;
+						document.getElementById("img11").src=$scope.datos[0].pathImagen3;
+						document.getElementById("s12").src= $scope.datos[0].pathR3;
+
+						document.getElementById("img12").alt=$scope.datos[0].resp2;
+						document.getElementById("img12").src=$scope.datos[0].pathImagen2;
+						document.getElementById("s13").src= $scope.datos[0].pathR2;
+
+						document.getElementById("img13").alt=$scope.datos[0].resp1;
+						document.getElementById("img13").src=$scope.datos[0].pathImagen1;
+						document.getElementById("s14").src= $scope.datos[0].pathR1;
+					}
+					break;
+					}
+				break;
+			}
+
+			//Carga del boton
             document.getElementById('b11').textContent= $scope.datos[0].desc;
             document.getElementById('b11').value= $scope.datos[0].desc;
-
+            //Carga sonido correspondiente al boton
             document.getElementById("s11").src= $scope.datos[0].frasecompleta;
 
-            document.getElementById("img11").alt=$scope.datos[0].resp1;
-            document.getElementById("img12").alt=$scope.datos[0].resp2;
-            document.getElementById("img13").alt=$scope.datos[0].resp3;
-
-            document.getElementById("img11").src=$scope.datos[0].pathImagen1;
-            document.getElementById("img12").src=$scope.datos[0].pathImagen2;
-            document.getElementById("img13").src=$scope.datos[0].pathImagen3;
-
-            document.getElementById("s12").src= $scope.datos[0].pathR1;
-            document.getElementById("s13").src= $scope.datos[0].pathR2;
-            document.getElementById("s14").src= $scope.datos[0].pathR3;
-
+            //Carga de respuesta correcta para luego validar
             rtaNivelUno = $scope.datos[0].desc;
 
         }else{
@@ -232,31 +425,119 @@ angular.module("starter.services", [])
       Users.select(nivel, categ, contadorNivelDos).then(function(users)
       {
 
-
         if(contadorNivelDos <= cantItemsCateg) {
           $scope.datos = users;
           contadorNivelDos++;
 
           rehacerNivelDos();
-          document.getElementById('b21').textContent= $scope.datos[0].resp1;
-          document.getElementById('b21').value= $scope.datos[0].resp1;
+          //Desactivo boton siguiente item
+          document.getElementById("bsgte2").textContent=" ";
 
-          document.getElementById('b22').textContent= $scope.datos[0].resp2;
-          document.getElementById('b22').value= $scope.datos[0].resp2;
+		  	posicion1=random1();
+			posicion2=random2(posicion1);
+			posicion3=random3(posicion1,posicion2);
 
-          document.getElementById('b23').textContent= $scope.datos[0].resp3;
-          document.getElementById('b23').value= $scope.datos[0].resp3;
+			switch (posicion1) {
+				case 1:
+				  switch (posicion2) {
+					case 2: {
+						document.getElementById('b21').textContent= $scope.datos[0].resp1;
+						document.getElementById('b21').value= $scope.datos[0].resp1;
+						document.getElementById("s21").src= $scope.datos[0].pathR1;
 
+						document.getElementById('b22').textContent=$scope.datos[0].resp2;
+						document.getElementById('b22').value= $scope.datos[0].resp2;
+						document.getElementById("s22").src= $scope.datos[0].pathR2;
+						document.getElementById('b23').textContent= $scope.datos[0].resp3;
+						document.getElementById('b23').value= $scope.datos[0].resp3;
+						document.getElementById("s23").src= $scope.datos[0].pathR3;
+					}
+					break;
+					case 3: {
+						document.getElementById('b21').textContent= $scope.datos[0].resp1;
+						document.getElementById('b21').value= $scope.datos[0].resp1;
+						document.getElementById("s21").src= $scope.datos[0].pathR1;
+
+						document.getElementById('b22').textContent=$scope.datos[0].resp3;
+						document.getElementById('b22').value= $scope.datos[0].resp3;
+						document.getElementById("s22").src= $scope.datos[0].pathR3;
+						document.getElementById('b23').textContent= $scope.datos[0].resp2;
+						document.getElementById('b23').value= $scope.datos[0].resp2;
+						document.getElementById("s23").src= $scope.datos[0].pathR2;
+
+					}
+					break;
+				}
+				break;
+				case 2:
+				  switch (posicion2) {
+					case 1:{
+						document.getElementById('b21').textContent= $scope.datos[0].resp2;
+						document.getElementById('b21').value= $scope.datos[0].resp2;
+						document.getElementById("s21").src= $scope.datos[0].pathR2;
+
+						document.getElementById('b22').textContent=$scope.datos[0].resp1;
+						document.getElementById('b22').value= $scope.datos[0].resp1;
+						document.getElementById("s22").src= $scope.datos[0].pathR1;
+						document.getElementById('b23').textContent= $scope.datos[0].resp3;
+						document.getElementById('b23').value= $scope.datos[0].resp3;
+						document.getElementById("s23").src= $scope.datos[0].pathR3;
+					}
+					break;
+					case 3:{
+						document.getElementById('b21').textContent= $scope.datos[0].resp2;
+						document.getElementById('b21').value= $scope.datos[0].resp2;
+						document.getElementById("s21").src= $scope.datos[0].pathR2;
+
+						document.getElementById('b22').textContent=$scope.datos[0].resp3;
+						document.getElementById('b22').value= $scope.datos[0].resp3;
+						document.getElementById("s22").src= $scope.datos[0].pathR3;
+						document.getElementById('b23').textContent= $scope.datos[0].resp1;
+						document.getElementById('b23').value= $scope.datos[0].resp1;
+						document.getElementById("s23").src= $scope.datos[0].pathR1;
+					};
+					break;
+
+				}
+				break;
+				case 3:
+
+				  switch (posicion2) {
+					case 1:{
+						document.getElementById('b21').textContent= $scope.datos[0].resp3;
+						document.getElementById('b21').value= $scope.datos[0].resp3;
+						document.getElementById("s21").src= $scope.datos[0].pathR3;
+
+						document.getElementById('b22').textContent=$scope.datos[0].resp1;
+						document.getElementById('b22').value= $scope.datos[0].resp1;
+						document.getElementById("s22").src= $scope.datos[0].pathR1;
+						document.getElementById('b23').textContent= $scope.datos[0].resp2;
+						document.getElementById('b23').value= $scope.datos[0].resp2;
+						document.getElementById("s23").src= $scope.datos[0].pathR2;
+					}
+					break;
+					case 2:{
+						document.getElementById('b21').textContent= $scope.datos[0].resp3;
+						document.getElementById('b21').value= $scope.datos[0].resp3;
+						document.getElementById("s21").src= $scope.datos[0].pathR3;
+
+						document.getElementById('b22').textContent=$scope.datos[0].resp2;
+						document.getElementById('b22').value= $scope.datos[0].resp2;
+						document.getElementById("s22").src= $scope.datos[0].pathR2;
+						document.getElementById('b23').textContent= $scope.datos[0].resp1;
+						document.getElementById('b23').value= $scope.datos[0].resp1;
+						document.getElementById("s23").src= $scope.datos[0].pathR1;
+					}
+					break;
+					}
+				break;
+			}
+
+		 //Carga de la imagen
           document.getElementById("img21").alt=$scope.datos[0].resp1;
           document.getElementById("img21").src=$scope.datos[0].pathImagen1;
 
-          document.getElementById("img12").src=$scope.datos[0].pathImagen2;
-          document.getElementById("img13").src=$scope.datos[0].pathImagen3;
-
-          /*         document.getElementById("s12").src= $scope.datos[0].pathR1;
-         document.getElementById("s13").src= $scope.datos[0].pathR2;
-         document.getElementById("s14").src= $scope.datos[0].pathR3;
-         */
+		  //Carga de respuesta INOCRRECTA para luego validar
           rtaIncorrectaNivelDos = $scope.datos[0].frase;
 
         }else{
@@ -267,6 +548,36 @@ angular.module("starter.services", [])
     })
   };
 
+  $scope.rehacerNivelTres = function(){
+          borrar();
+          //Apago los botnes de abajo de las imagenes
+          document.getElementById("rtaoculta31").style.display="none";
+          document.getElementById("rtaoculta32").style.display="none";
+          document.getElementById("rtaoculta33").style.display="none";
+
+          //Desbloqueolos botones de abajo de las imagenes
+          document.getElementById("brtaelegida31").disabled=false;
+          document.getElementById("brtaelegida32").disabled=false;
+          document.getElementById("brtaelegida33").disabled=false;
+
+          //prendo los bordes punteados
+          document.getElementById("bbi31").style.border="dashed black";
+          document.getElementById("bbi32").style.border="dashed black";
+          document.getElementById("bbi33").style.border="dashed black";
+
+          //Prendo los botones de respuesta
+          document.getElementById("b31").style.display="block";
+          document.getElementById("b32").style.display="block";
+          document.getElementById("b33").style.display="block";
+
+          //Saca borde rojo o verde
+          document.getElementById("img31").style.border="outset blue";
+          document.getElementById("img32").style.border="outset transparent";
+          document.getElementById("img33").style.border="outset transparent";
+          //Contador para validacion
+          flagCheck=0;
+  };
+
   $scope.cargarNivelTres = function() {
       nivel = getNivel();
       categ = getCategoria();
@@ -275,38 +586,135 @@ angular.module("starter.services", [])
       {
          $scope.datos = users;
 
-      if(contadorNivelTres <= cantItemsCateg) {
-          contadorNivelTres++;
-          flagCheck = 0;
+            if(contadorNivelTres <= cantItemsCateg) {
+                      contadorNivelTres++;
+                      flagCheck = 0;
 
-          rehacerNivelTres();
-          document.getElementById('b33').textContent= $scope.datos[0].resp1;
-          document.getElementById('b33').value= $scope.datos[0].resp1;
+                      $scope.rehacerNivelTres();
+                      //Desactivo boton siguiente item
+                      document.getElementById("bsgte3").textContent=" ";
 
-          document.getElementById('b32').textContent= $scope.datos[0].resp2;
-          document.getElementById('b32').value= $scope.datos[0].resp2;
+						posicion1=random1();
+						posicion2=random2(posicion1);
+						posicion3=random3(posicion1,posicion2);
 
-          document.getElementById('b31').textContent= $scope.datos[0].resp3;
-          document.getElementById('b31').value= $scope.datos[0].resp3;
 
-          document.getElementById("img31").alt=$scope.datos[0].resp1;
-          document.getElementById("img31").src=$scope.datos[0].pathImagen1;
+						switch (posicion1) {
+							case 1:
+							  switch (posicion2) {
+								case 2: {
+									  document.getElementById('b31').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b31').value= $scope.datos[0].resp1;
+									  document.getElementById("s31").src= $scope.datos[0].pathR1;
 
-          document.getElementById("img32").alt=$scope.datos[0].resp2;
-          document.getElementById("img32").src=$scope.datos[0].pathImagen2;
+									  document.getElementById('b32').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b32').value= $scope.datos[0].resp2;
+								      document.getElementById("s32").src= $scope.datos[0].pathR2;
 
-          document.getElementById("img33").alt=$scope.datos[0].resp3;
-          document.getElementById("img33").src=$scope.datos[0].pathImagen3;
+									  document.getElementById('b33').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b33').value= $scope.datos[0].resp3;
+							          document.getElementById("s33").src= $scope.datos[0].pathR3;
+								}
+								break;
+								case 3: {
+									  document.getElementById('b31').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b31').value= $scope.datos[0].resp1;
+									  document.getElementById("s31").src= $scope.datos[0].pathR1;
 
-         /*document.getElementById("s12").src= $scope.datos[0].pathR1;
-         document.getElementById("s13").src= $scope.datos[0].pathR2;
-         document.getElementById("s14").src= $scope.datos[0].pathR3;
-         */
-       }else{
-         borrar();
-         mostrar('finCategoria','nivel3');
-         contadorNivelTres = 1;
-       }
+									  document.getElementById('b32').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b32').value= $scope.datos[0].resp3;
+									  document.getElementById("s32").src= $scope.datos[0].pathR3;
+
+									  document.getElementById('b33').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b33').value= $scope.datos[0].resp2;
+								      document.getElementById("s33").src= $scope.datos[0].pathR2;
+								}
+								break;
+							}
+							break;
+							case 2:
+							  switch (posicion2) {
+								case 1:{
+									  document.getElementById('b31').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b31').value= $scope.datos[0].resp2;
+								      document.getElementById("s31").src= $scope.datos[0].pathR2;
+
+									  document.getElementById('b32').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b32').value= $scope.datos[0].resp1;
+									  document.getElementById("s32").src= $scope.datos[0].pathR1;
+
+									  document.getElementById('b33').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b33').value= $scope.datos[0].resp3;
+									  document.getElementById("s33").src= $scope.datos[0].pathR3;
+								}
+								break;
+								case 3:{
+									  document.getElementById('b31').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b31').value= $scope.datos[0].resp2;
+									  document.getElementById("s31").src= $scope.datos[0].pathR2;
+
+									  document.getElementById('b32').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b32').value= $scope.datos[0].resp3;
+			                          document.getElementById("s32").src= $scope.datos[0].pathR3;
+
+									  document.getElementById('b33').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b33').value= $scope.datos[0].resp1;
+									  document.getElementById("s33").src= $scope.datos[0].pathR1;
+								};
+								break;
+
+							}
+							break;
+							case 3:
+
+							  switch (posicion2) {
+								case 1:{
+									  document.getElementById('b31').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b31').value= $scope.datos[0].resp3;
+									  document.getElementById("s31").src= $scope.datos[0].pathR3;
+
+									  document.getElementById('b32').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b32').value= $scope.datos[0].resp1;
+									  document.getElementById("s32").src= $scope.datos[0].pathR1;
+
+									  document.getElementById('b33').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b33').value= $scope.datos[0].resp2;
+									  document.getElementById("s33").src= $scope.datos[0].pathR2;
+								}
+								break;
+								case 2:{
+									  document.getElementById('b31').textContent= $scope.datos[0].resp3;
+									  document.getElementById('b31').value= $scope.datos[0].resp3;
+									  document.getElementById("s31").src= $scope.datos[0].pathR3;
+
+									  document.getElementById('b32').textContent= $scope.datos[0].resp2;
+									  document.getElementById('b32').value= $scope.datos[0].resp2;
+									  document.getElementById("s32").src= $scope.datos[0].pathR2;
+
+									  document.getElementById('b33').textContent= $scope.datos[0].resp1;
+									  document.getElementById('b33').value= $scope.datos[0].resp1;
+									  document.getElementById("s33").src= $scope.datos[0].pathR1;
+								}
+								break;
+								}
+							break;
+						}
+
+                      //Carga de las 3 imagenes
+                      document.getElementById("img31").alt=$scope.datos[0].resp1;
+                      document.getElementById("img31").src=$scope.datos[0].pathImagen1;
+
+                      document.getElementById("img32").alt=$scope.datos[0].resp2;
+                      document.getElementById("img32").src=$scope.datos[0].pathImagen2;
+
+                      document.getElementById("img33").alt=$scope.datos[0].resp3;
+                      document.getElementById("img33").src=$scope.datos[0].pathImagen3;
+
+           }else{
+                    borrar();
+                    mostrar('finCategoria','nivel3');
+                    contadorNivelTres = 1;
+                }
 
     })
   };
@@ -325,7 +733,7 @@ angular.module("starter.services", [])
 
     document.getElementById("frase").innerHTML=fraseIncompleta;
 
-};
+  };
 
   $scope.cargarNivelCuatro = function() {
       nivel = getNivel();
@@ -336,81 +744,182 @@ angular.module("starter.services", [])
          $scope.datos = users;
 
           if(contadorNivelCuatro <= cantItemsCateg) {
-            contadorNivelCuatro++;
-            $scope.rehacerNivelCuatro();
+                    contadorNivelCuatro++;
+                    $scope.rehacerNivelCuatro();
+                    //Desactivo boton siguiente item
+                    document.getElementById("bsgte4").textContent=" ";
 
-            fraseCorrecta =  $scope.datos[0].frasecompleta;
-            fraseIncompleta =  $scope.datos[0].frase;
-            document.getElementById("frase").innerHTML=$scope.datos[0].frase;
+						posicion1=random1();
+						posicion2=random2(posicion1);
+						posicion3=random3(posicion1,posicion2);
 
-            document.getElementById('b41').textContent= $scope.datos[0].resp1;
-            document.getElementById('b41').value= $scope.datos[0].resp1;
+						switch (posicion1) {
+							case 1:
+							  switch (posicion2) {
+								case 2: {
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp1;
+									document.getElementById('b41').value= $scope.datos[0].resp1;
+									document.getElementById("s41").src= $scope.datos[0].pathR1;
 
-            document.getElementById('b42').textContent= $scope.datos[0].resp2;
-            document.getElementById('b42').value= $scope.datos[0].resp2;
+									document.getElementById('b42').textContent= $scope.datos[0].resp2;
+									document.getElementById('b42').value= $scope.datos[0].resp2;
+									document.getElementById("s42").src= $scope.datos[0].pathR2;
 
-            document.getElementById('b43').textContent= $scope.datos[0].resp3;
-            document.getElementById('b43').value= $scope.datos[0].resp3;
+									document.getElementById('b43').textContent= $scope.datos[0].resp3;
+									document.getElementById('b43').value= $scope.datos[0].resp3;
+									document.getElementById("s43").src= $scope.datos[0].pathR3;
+								}
+								break;
+								case 3: {
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp1;
+									document.getElementById('b41').value= $scope.datos[0].resp1;
+									document.getElementById("s41").src= $scope.datos[0].pathR1;
 
-            document.getElementById("img41").alt=$scope.datos[0].desc;
-            document.getElementById("img41").src=$scope.datos[0].pathImagen1;
+									document.getElementById('b42').textContent= $scope.datos[0].resp3;
+									document.getElementById('b42').value= $scope.datos[0].resp3;
+									document.getElementById("s42").src= $scope.datos[0].pathR3;
 
-            rtaNivelCuatro = $scope.datos[0].desc;
+									document.getElementById('b43').textContent= $scope.datos[0].resp2;
+									document.getElementById('b43').value= $scope.datos[0].resp2;
+									document.getElementById("s43").src= $scope.datos[0].pathR2;
+								}
+								break;
+							}
+							break;
+							case 2:
+							  switch (posicion2) {
+								case 1:{
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp2;
+									document.getElementById('b41').value= $scope.datos[0].resp2;
+									document.getElementById("s41").src= $scope.datos[0].pathR2;
 
-         /*document.getElementById("s12").src= $scope.datos[0].pathR1;
-         document.getElementById("s13").src= $scope.datos[0].pathR2;
-         document.getElementById("s14").src= $scope.datos[0].pathR3;
-         */
+									document.getElementById('b42').textContent= $scope.datos[0].resp1;
+									document.getElementById('b42').value= $scope.datos[0].resp1;
+									document.getElementById("s42").src= $scope.datos[0].pathR1;
 
-       }else{
-         borrar();
-         mostrar('finCategoria','nivel4');
-         contadorNivelCuatro = 1;
-       }
+									document.getElementById('b43').textContent= $scope.datos[0].resp3;
+									document.getElementById('b43').value= $scope.datos[0].resp3;
+									document.getElementById("s43").src= $scope.datos[0].pathR3;
+								}
+								break;
+								case 3:{
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp2;
+									document.getElementById('b41').value= $scope.datos[0].resp2;
+									document.getElementById("s41").src= $scope.datos[0].pathR2;
+
+									document.getElementById('b42').textContent= $scope.datos[0].resp3;
+									document.getElementById('b42').value= $scope.datos[0].resp3;
+									document.getElementById("s42").src= $scope.datos[0].pathR3;
+
+									document.getElementById('b43').textContent= $scope.datos[0].resp1;
+									document.getElementById('b43').value= $scope.datos[0].resp1;
+									document.getElementById("s43").src= $scope.datos[0].pathR1;
+								};
+								break;
+
+							}
+							break;
+							case 3:
+
+							  switch (posicion2) {
+								case 1:{
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp3;
+									document.getElementById('b41').value= $scope.datos[0].resp3;
+									document.getElementById("s41").src= $scope.datos[0].pathR3;
+
+									document.getElementById('b42').textContent= $scope.datos[0].resp1;
+									document.getElementById('b42').value= $scope.datos[0].resp1;
+									document.getElementById("s42").src= $scope.datos[0].pathR1;
+
+									document.getElementById('b43').textContent= $scope.datos[0].resp2;
+									document.getElementById('b43').value= $scope.datos[0].resp2;
+									document.getElementById("s43").src= $scope.datos[0].pathR2;
+								}
+								break;
+								case 2:{
+									//carga de botones respuesta
+									document.getElementById('b41').textContent= $scope.datos[0].resp3;
+									document.getElementById('b41').value= $scope.datos[0].resp3;
+									document.getElementById("s41").src= $scope.datos[0].pathR3;
+
+									document.getElementById('b42').textContent= $scope.datos[0].resp2;
+									document.getElementById('b42').value= $scope.datos[0].resp2;
+									document.getElementById("s42").src= $scope.datos[0].pathR2;
+
+									document.getElementById('b43').textContent= $scope.datos[0].resp1;
+									document.getElementById('b43').value= $scope.datos[0].resp1;
+									document.getElementById("s43").src= $scope.datos[0].pathR1;
+								}
+								break;
+								}
+							break;
+						}
+
+					//Carga de frases a mostrar
+                    fraseCorrecta =  $scope.datos[0].frasecompleta;
+                    fraseIncompleta =  $scope.datos[0].frase;
+                    document.getElementById("frase").innerHTML=$scope.datos[0].frase;
+					//Carga de imagen
+                    document.getElementById("img41").alt=$scope.datos[0].desc;
+                    document.getElementById("img41").src=$scope.datos[0].pathImagen1;
+                    //Carga de respuesta correcta para luego validar
+                    rtaNivelCuatro = $scope.datos[0].desc;
+
+          }else{
+                 borrar();
+                 mostrar('finCategoria','nivel4');
+                 contadorNivelCuatro = 1;
+              }
 
     })
   };
 
   $scope.validacionNivelCero= function(button){
 
-      borrar();
+    borrar();
      var rtaUsuario = document.getElementById(button).value;
      var n =rtaUsuario.localeCompare(rtaNivelCero);
 
  		if( n!=0 ){
-
-       document.getElementById("soundincorrecto").play();
-       document.getElementById("incorrecto").innerHTML='Try again';
-       document.getElementById("img01").style.border="outset red";
-       document.getElementById(button).style.border="outset red";
-       document.getElementById(button).disabled='disabled';
+             document.getElementById("soundincorrecto").play();
+             document.getElementById("incorrecto").innerHTML='Try again';
+             document.getElementById("img01").style.border="outset red";
+             document.getElementById(button).style.border="outset red";
+             document.getElementById(button).disabled='disabled';
       }else{
-       document.getElementById("soundcorrecto").play();
-       document.getElementById("correcto").innerHTML='Very Good!';
-       document.getElementById(button).style.border="outset green";
-       document.getElementById("img01").style.border="outset green";
+             document.getElementById("soundcorrecto").play();
+             document.getElementById("correcto").innerHTML='Very Good!';
+             document.getElementById(button).style.border="outset green";
+             document.getElementById("bsgte0").textContent=">";
+             document.getElementById("img01").style.border="outset green";
 
    }
   };
 
   $scope.validacionNivelUno= function(button){
-   borrar();
+       borrar();
 
-   var rtaUsuario2 = document.getElementById(button).alt;
-   var n =rtaUsuario2.localeCompare(rtaNivelUno);
+       var rtaUsuario2 = document.getElementById(button).alt;
+       var n =rtaUsuario2.localeCompare(rtaNivelUno);
 
-   if( n != 0 ){
-     musicplay("soundincorrecto");
-     document.getElementById("incorrecto").innerHTML='Try again';
-     document.getElementById("b11").style.border="outset red";
-     document.getElementById(button).style.border="outset red";
+       if( n != 0 ){
+               musicplay("soundincorrecto");
+               document.getElementById("incorrecto").innerHTML='Try again';
+               document.getElementById("b11").style.border="outset red";
+               document.getElementById(button).style.border="outset red";
 
-   }else{
-       musicplay("soundcorrecto");
-       document.getElementById("correcto").innerHTML='Very Good!';
-       document.getElementById("b11").style.border="outset green";
-       document.getElementById(button).style.border="outset green";
-       }
+       }else{
+               musicplay("soundcorrecto");
+               document.getElementById("correcto").innerHTML='Very Good!';
+               document.getElementById("b11").style.border="outset green";
+               document.getElementById(button).style.border="outset green";
+               document.getElementById("bsgte1").textContent=">";
+           }
 
   };
 
@@ -432,6 +941,7 @@ angular.module("starter.services", [])
       document.getElementById("correcto").innerHTML='Very Good!';
       document.getElementById(button).style.border="outset green";
       document.getElementById("img21").style.border="outset green";
+      document.getElementById("bsgte2").textContent=">";
     }
   };
 
@@ -506,6 +1016,7 @@ angular.module("starter.services", [])
                 document.getElementById("brtaelegida33").style.border= "outset OrangeRed";
                 document.getElementById("rtaoculta33").style.display = "block";
             //Todo salio correcto
+                document.getElementById("bsgte3").textContent=">";
                 document.getElementById("brtaelegida33").disabled='disabled';
                 musicplay("soundcorrecto");
                 document.getElementById("correcto").innerHTML='Very Good!';
@@ -533,6 +1044,8 @@ angular.module("starter.services", [])
       document.getElementById(button).style.border="outset green";
       document.getElementById("img41").style.border="outset green";
       document.getElementById("frase").innerHTML=fraseCorrecta;
+      document.getElementById("bsgte4").textContent=">";
+
 
     }
   };
@@ -540,6 +1053,7 @@ angular.module("starter.services", [])
   $scope.cargarProgreso = function(n,c) {
     switch (n) {
     case 0:
+       document.getElementById("cabeceraNivel0").textContent='BEGGINER';
        contadorNivelCero = progresoNivelCero[c];
        $scope.cargarNivelCero();
        break;
@@ -552,16 +1066,19 @@ angular.module("starter.services", [])
            contadorNivelDos = progresoNivelDos[c];
            $scope.cargarNivelDos();
         } else {
+           document.getElementById("cabeceraNivel3").textContent='INTERMEDIATE';
            contadorNivelTres = progresoNivelDos[c];
            $scope.cargarNivelTres();
         }
         break;
     case 3:
+        document.getElementById("cabeceraNivel3").textContent='UPPER INTERMEDIATE';
         contadorNivelTres = progresoNivelTres[c];
         $scope.cargarNivelTres();
         break;
     case 4:
         if (c <= 2) {
+           document.getElementById("cabeceraNivel0").textContent='ADVANCED';
            contadorNivelCero = progresoNivelCuatro[c];
            $scope.cargarNivelCero();
         } else {
