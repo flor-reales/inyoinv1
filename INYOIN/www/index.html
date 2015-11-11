@@ -585,9 +585,9 @@
       <div id="cabeceraNivel"> INTERMEDIATE </div>
 
       <div id="rehacer">
-        <button onclick="rehacerNivelDos()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
+        <button ng-click="rehacerNivelDos()"style="border:transparent 1px solid;background:transparent;"><img id="imgrehacer" width="40px" height="40px" src="img/rehacer.png"/>
       </div>
-			<div id="cabecera2"><h4> COLOUR AND FRUIT? </h4></div>
+			<div id="cabecera2"><h3> COLOUR AND FRUIT? </h3></div>
 		  <div id="imgcenterunique"> <img id=img21 width="180px" height="180px"></div>
 
 
@@ -1091,19 +1091,6 @@ function rehacerNivelUno(){
 
 }
 
-function rehacerNivelDos(){
-  borrar();
-  //Habilita todos los botones
-  document.getElementById("b21").disabled=false;
-  document.getElementById("b22").disabled=false;
-  document.getElementById("b23").disabled=false;
-  //Saca borde rojo o verde
-  document.getElementById("b21").style.border="outset transparent";
-  document.getElementById("b22").style.border="outset transparent";
-  document.getElementById("b23").style.border="outset transparent";
-  document.getElementById("img21").style.border="outset transparent";
-
-}
 
 function random1(){
 	return Math.floor((Math.random() * 3) + 1);
