@@ -145,7 +145,7 @@ angular.module("starter.services", [])
            progresoNivelTres[getCategoria()]=contadorNivelTres-1;
            break;
        case 4:
-            if (getCategoria <= 2) {
+            if (getCategoria() <= 2) {
                 progresoNivelCuatro[getCategoria()]=contadorNivelCero-1;
             } else {
                 progresoNivelCuatro[getCategoria()]=contadorNivelCuatro-1;
