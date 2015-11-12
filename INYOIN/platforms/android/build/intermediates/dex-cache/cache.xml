@@ -22,5 +22,12 @@
         sha1="74cbd33faef2706f8fd2c2677cde8b63621b42d3">
         <dex dex="C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector-fe79dd3e77a4c950413000581e556f82bba11daa.jar" />
     </item>
+    <item
+        jar="C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\release\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8a991ad8f3ecb41987f1d8c5fae1a5f8f50bf56b">
+        <dex dex="C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\pre-dexed\release\classes-5db0dfc08bc3722fd6c67abc13c4d67237f52636.jar" />
+    </item>
 
 </items>

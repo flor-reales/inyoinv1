@@ -102,6 +102,7 @@ angular.module("starter.services", [])
    var contadorAprender = [0,0,0,0,0];
    var progresoAprender = [0,0,0,0,0];
    var fraseIncompleta;
+   var dobleCorrecto;
 
 
    $scope.guardarProgresoAprender = function() {
@@ -144,7 +145,7 @@ angular.module("starter.services", [])
            progresoNivelTres[getCategoria()]=contadorNivelTres-1;
            break;
        case 4:
-            if (getCategoria <= 2) {
+            if (getCategoria() <= 2) {
                 progresoNivelCuatro[getCategoria()]=contadorNivelCero-1;
             } else {
                 progresoNivelCuatro[getCategoria()]=contadorNivelCuatro-1;
@@ -418,6 +419,21 @@ angular.module("starter.services", [])
     })
   };
 
+
+   $scope.rehacerNivelDos = function(){
+    borrar();
+    //Habilita todos los botones
+    document.getElementById("b21").disabled=false;
+    document.getElementById("b22").disabled=false;
+    document.getElementById("b23").disabled=false;
+    //Saca borde rojo o verde
+    document.getElementById("b21").style.border="outset transparent";
+    document.getElementById("b22").style.border="outset transparent";
+    document.getElementById("b23").style.border="outset transparent";
+    document.getElementById("img21").style.border="outset transparent";
+    dobleCorrecto = 0;
+  };
+
   $scope.cargarNivelDos = function() {
       nivel = getNivel();
       categ = getCategoria();
@@ -429,9 +445,10 @@ angular.module("starter.services", [])
           $scope.datos = users;
           contadorNivelDos++;
 
-          rehacerNivelDos();
+          $scope.rehacerNivelDos();
           //Desactivo boton siguiente item
           document.getElementById("bsgte2").textContent=" ";
+
 
 		  	posicion1=random1();
 			posicion2=random2(posicion1);
@@ -941,7 +958,11 @@ angular.module("starter.services", [])
       document.getElementById("correcto").innerHTML='Very Good!';
       document.getElementById(button).style.border="outset green";
       document.getElementById("img21").style.border="outset green";
-      document.getElementById("bsgte2").textContent=">";
+      dobleCorrecto++;
+      if (dobleCorrecto == 2){
+          document.getElementById("bsgte2").textContent=">";
+      }
+
     }
   };
 

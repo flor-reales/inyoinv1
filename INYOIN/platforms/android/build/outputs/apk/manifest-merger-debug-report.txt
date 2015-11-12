@@ -49,16 +49,16 @@ ADDED from AndroidManifest.xml:7:5
 		ADDED from AndroidManifest.xml:7:53
 	android:hardwareAccelerated
 		ADDED from AndroidManifest.xml:7:18
-activity#com.ionicframework.testsqllite929415.MainActivity
+activity#com.ionicframework.testsqllite929415.INYOIN
 ADDED from AndroidManifest.xml:8:9
 	android:windowSoftInputMode
-		ADDED from AndroidManifest.xml:8:248
+		ADDED from AndroidManifest.xml:8:242
 	android:label
 		ADDED from AndroidManifest.xml:8:97
 	android:configChanges
 		ADDED from AndroidManifest.xml:8:19
 	android:theme
-		ADDED from AndroidManifest.xml:8:194
+		ADDED from AndroidManifest.xml:8:188
 	android:name
 		ADDED from AndroidManifest.xml:8:166
 	android:launchMode

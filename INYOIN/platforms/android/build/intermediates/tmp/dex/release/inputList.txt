@@ -1,0 +1,4 @@
+C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\classes\release
+C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\pre-dexed\release\sqlite-connector-fe79dd3e77a4c950413000581e556f82bba11daa.jar
+C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\pre-dexed\release\classes-5db0dfc08bc3722fd6c67abc13c4d67237f52636.jar
+C:\Users\Claudia\Documents\GitHub\inyoinv1\INYOIN\platforms\android\build\intermediates\pre-dexed\release\sqlite-native-driver-7064b2e705d400b7ec4cc7c452e8a95d242a0e51.jar
